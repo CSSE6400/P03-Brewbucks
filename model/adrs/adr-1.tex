@@ -1,0 +1,52 @@
+\documentclass{article}
+
+\title{Architectural Decision Record}
+\author{Nimesh Garg}
+\date{April 25, 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Decisions}
+\begin{description}
+\item Marking "Customizable Ordering" as Non-Functional   
+\item Deciding on "Service Level Architecture" 
+\item Using Terraform Cloud for deployment
+\item Using ReactJS for frontend
+\item Using Lamba functions as API endpoints
+\item Using RDS Prostgres
+\item Using "Payment Success" and "Payment Unsuccessful" button on payment instead of proper payment flow. It is same as response returned by a 3rd party payment gateway.
+\item No working on "main" branch
+\item Do not merge pull request without review
+
+\end{description}
+
+\section{Status}
+% Add the status of your ADR here (e.g., Proposed, Accepted, Rejected, etc.)
+\begin{description}
+    \item All accepted except Lamda (need to check with tutor)
+\end{description}
+
+\section{Consequences}
+% Discuss the potential consequences and impacts of the decision
+\begin{description}
+    \item A basic UI with non-customizable ordering
+\end{description}
+
+\section{Alternatives}
+% List any alternative options that were considered
+\begin{description}
+    \item[AWS Lambda] Flask endpoints
+\end{description}
+
+
+\section{Related ADRs}
+% Mention any related ADRs that are relevant to this decision
+None
+
+\section{References}
+% Include any references or resources that were used
+None
+
+\end{document}
