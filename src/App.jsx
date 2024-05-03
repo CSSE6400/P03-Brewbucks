@@ -6,6 +6,10 @@ function App() {
 
   return (
     <div>
+      <div className="bg-white p-4">
+        <h1 className="text-2xl">Brewbucks</h1>
+      </div>
+    
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
       </Routes>
