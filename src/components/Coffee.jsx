@@ -1,6 +1,6 @@
 const Coffee = ({name, desc, price}) => {
     return (
-        <div className="outline p-1 w-75">
+        <div className="bg-white shadow-sm p-6 rounded-lg flex justify-between">
             <div>{name}</div>
             <div>{desc}</div>
             <div>{price}</div>
