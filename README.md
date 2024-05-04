@@ -22,6 +22,9 @@
 - run 'npm install' in terminal
 - run 'npm run dev' in terminal
 
+# Install daisy ui for component library
+- run 'npm i -D daisyui@latest' in terminal
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

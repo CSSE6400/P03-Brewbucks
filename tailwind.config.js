@@ -8,7 +8,10 @@ export default {
     extend: {},
   },
   plugins: [
-    require('flowbite/plugin')  
+    require('daisyui')
   ],
+  daisyui: {
+    darkTheme: "light",
+   },
 }
 
