@@ -1,14 +1,22 @@
 import Coffee from "./Coffee"
 import Store from "./Store"
+import {PRODUCTS} from "../products.js"
+import {ShopContext} from "../context/ShopContext.jsx"
+import {useContext} from "react"
 
-const Menu = ({handleClick}) => {
+const Menu = () => {
+    
+    const {addToCart} = useContext(ShopContext)
+
     return (
         <div className="flex-col space-y-3">
             <Store></Store>
             <div className="flex-col space-y-1.5">
-                <Coffee handleClick={handleClick} name="Iced Latte" desc="This is a description about an Iced Latte" price="$7.50"></Coffee>
-                <Coffee handleClick={handleClick} name="Mocha" desc="This is a description about a Mocha" price="$7.50"></Coffee>
-                <Coffee handleClick={handleClick} name="Americano" desc="This is a description about an Americano" price="$7.50"></Coffee>
+                {
+                    PRODUCTS.map((product) => {
+                        return <Coffee type={product.type} desc={product.desc} price={product.price} handleClick={() => addToCart(product.id)}></Coffee>;
+                    })
+                }
             </div>
         </div>
     )
