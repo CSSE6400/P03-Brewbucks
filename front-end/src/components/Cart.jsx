@@ -1,6 +1,6 @@
 import { useState } from "react";
-import CartItem from "./CartItem";
-import { PRODUCTS } from "../products";
+import CartItem from "./CartItem.jsx";
+import { PRODUCTS } from "../products.js";
 import {ShopContext} from "../context/ShopContext.jsx"
 import {useContext} from "react"
 
