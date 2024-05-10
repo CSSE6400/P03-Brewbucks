@@ -4,7 +4,7 @@ resource "aws_db_instance" "database" {
   engine                 = "postgres"
   engine_version         = "14"
   instance_class         = "db.t4g.micro"
-  db_name                = "spamoverflow"
+  db_name                = "brewbucks"
   username               = local.database_username
   password               = local.database_password
   parameter_group_name   = "default.postgres14"
@@ -14,7 +14,7 @@ resource "aws_db_instance" "database" {
 }
 
 resource "aws_security_group" "database" {
-  name        = "spamoverflow-database"
+  name        = "brewbucks-database"
   description = "Allow inbound Postgres traffic"
 
   ingress {

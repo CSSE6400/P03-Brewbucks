@@ -1,11 +1,4 @@
 terraform {
-  cloud {
-    organization = "BrewBucks"
-
-    workspaces {
-      name = "BrewBucks-Terraform"
-    }
-  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -14,6 +7,14 @@ terraform {
     docker = {
       source  = "kreuzwerker/docker"
       version = "~> 3.0"
+    }
+  }
+
+  cloud {
+    organization = "BrewBucks"
+
+    workspaces {
+      name = "BrewBucks-Terraform"
     }
   }
 }
