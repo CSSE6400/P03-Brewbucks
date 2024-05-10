@@ -1,7 +1,7 @@
 from datetime import datetime,timezone
 from . import db
 
-class Rewards (db.Model):
+class OrderItems (db.Model):
     __tablename__ = 'order_items'
 
     order_item_id = db.Column(db.Integer, primary_key=True, autoincrement=True, nullable=False, unique=True, index=True)

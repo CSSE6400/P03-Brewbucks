@@ -11,6 +11,12 @@ def create_app(config_overrides=None):
  
    # Load the models 
    from brewbucks.models import db 
+   from brewbucks.models.users import Users
+   from brewbucks.models.order import Orders
+   from brewbucks.models.payments import Payments
+   from brewbucks.models.menu_item import MenuItems
+   from brewbucks.models.order_items import OrderItems
+   from brewbucks.models.rewards import Rewards
    db.init_app(app) 
  
    # Create the database tables 

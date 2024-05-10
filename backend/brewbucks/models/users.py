@@ -4,8 +4,8 @@ from enum import Enum
 
 
 class Roles (Enum):
-    Customer = 1
-    Employee = 2
+    Customer = "customer"
+    Employee = "employee"
 
 class Users (db.Model):
     __tablename__ = 'users'
@@ -25,7 +25,7 @@ class Users (db.Model):
             'first_name': self.first_name,
             'last_name': self.last_name,
             'username': self.username,
-            'role': self.role.name,
+            'role': self.role.value,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }

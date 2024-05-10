@@ -1,5 +1,6 @@
 from datetime import datetime,timezone
-from . import db, PaymentStatus
+from . import db
+from .payments import PaymentStatus
 from enum import Enum
 
 class OrderStatus (Enum):
