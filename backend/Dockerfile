@@ -1,0 +1,13 @@
+FROM python:3.10
+
+RUN pip3 install poetry
+
+WORKDIR /app
+
+COPY pyproject.toml ./
+
+RUN poetry install --no-root
+
+COPY brewbucks brewbucks
+
+CMD ["poetry", "run", "flask", "--app", "brewbucks", "run", "--host", "0.0.0.0", "--port", "80"]
