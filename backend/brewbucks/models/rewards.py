@@ -12,11 +12,8 @@ class Rewards (db.Model):
 
     def to_dict(self):
         return {
-            'user_id': self.user_id,
-            'first_name': self.first_name,
-            'last_name': self.last_name,
-            'username': self.username,
-            'role': self.role.name,
+            'customer_id': self.customer_id,
+            'total_points': self.total_points,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }
