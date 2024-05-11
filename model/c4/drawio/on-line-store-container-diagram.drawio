@@ -1,6 +1,6 @@
-<mxfile modified="2024-05-09T15:07:20.916Z" host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="JrKJBnk04NUJzrMcQn7T" version="24.3.1" type="device">
+<mxfile modified="2024-05-11T05:47:43.210Z" host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="_TskP4d32fCd2jNZUOra" version="24.4.0" type="device">
   <diagram id="UJlyGFXVCkptwmDJzh81" name="Page-1">
-    <mxGraphModel dx="1004" dy="678" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="954" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
       <root>
         <object label="" id="0">
           <mxCell />
@@ -24,7 +24,7 @@
             <mxGeometry x="280" y="70" width="830" height="710" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="ZFZfMnJs7HL2lw4cmxaP-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" parent="1" source="5cVvOpawmlWqnZKX2nME-5" edge="1" target="A803iBBg6vPyRcOmnQ50-1">
+        <mxCell id="ZFZfMnJs7HL2lw4cmxaP-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" parent="1" source="5cVvOpawmlWqnZKX2nME-5" target="A803iBBg6vPyRcOmnQ50-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="322.9200000000001" y="414.24" as="targetPoint" />
           </mxGeometry>
@@ -62,7 +62,7 @@
             <mxPoint x="590" y="150" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="z5IH9APNfa8hOaEbaLJD-16" value="Read and write reward points" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="z5IH9APNfa8hOaEbaLJD-15" vertex="1" connectable="0">
+        <mxCell id="z5IH9APNfa8hOaEbaLJD-16" value="Read and update reward points" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="z5IH9APNfa8hOaEbaLJD-15" vertex="1" connectable="0">
           <mxGeometry x="0.1267" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -159,32 +159,32 @@
           </mxGeometry>
         </mxCell>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Web Application" technology="Python, Flask" description="Delivers the web front-end for the on-line store." technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="A803iBBg6vPyRcOmnQ50-1">
-          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" vertex="1" parent="1">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
             <mxGeometry x="300" y="354" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Reward Point System" technology="Python" description="Provides the backend logic for tracking customer reward points." technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="A803iBBg6vPyRcOmnQ50-2">
-          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" vertex="1" parent="1">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
             <mxGeometry x="600" y="90" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Customer Account Management" technology="Python" description="Provides the backend logic for managing accounts." technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="A803iBBg6vPyRcOmnQ50-3">
-          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" vertex="1" parent="1">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
             <mxGeometry x="600" y="260" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Food Purchasing" technology="Python" description="Provides the backend logic for ordering food." technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="A803iBBg6vPyRcOmnQ50-5">
-          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" vertex="1" parent="1">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
             <mxGeometry x="600" y="430" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Food Browsing" technology="Python" description="Provides the backend logic for browsing food options." technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="A803iBBg6vPyRcOmnQ50-6">
-          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" vertex="1" parent="1">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
             <mxGeometry x="600" y="620" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Interactive Web Pages" technology="React &amp; NextJS" description="Provides the environment in which customers can view foods" technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/30/React_Logo_SVG.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="A803iBBg6vPyRcOmnQ50-7">
-          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#404040;strokeColor=none;resizable=1;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" vertex="1" parent="1">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#404040;strokeColor=none;resizable=1;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
             <mxGeometry x="308.75" y="610" width="162.5" height="90" as="geometry" />
           </mxCell>
         </object>
