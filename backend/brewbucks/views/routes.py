@@ -14,4 +14,4 @@ def create_test_user():
 #     print(user.to_dict())
     db.session.add(user)
     db.session.commit()
-    return jsonify(user.to_dict()), 200
+    return jsonify(user.to_dict()), 201

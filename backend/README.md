@@ -8,3 +8,6 @@
    ```shell
    poetry run flask --app brewbucks run --host 0.0.0.0 --port 8080
    ```
+
+## Docker Image
+- Flask runs on port 80
