@@ -13,11 +13,10 @@ class OrderItems (db.Model):
 
     def to_dict(self):
         return {
-            'user_id': self.user_id,
-            'first_name': self.first_name,
-            'last_name': self.last_name,
-            'username': self.username,
-            'role': self.role.name,
+            'order_item_id': self.order_item_id,
+            'order_id': self.order_id,
+            'menu_item_id': self.menu_item_id,
+            'quantity': self.quantity,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }

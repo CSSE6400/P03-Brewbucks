@@ -18,7 +18,7 @@ class MenuItems (db.Model):
             'name': self.name,
             'description': self.description,
             'price': self.price,
-            'orderable': self.status,
+            'orderable': self.orderable,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }
