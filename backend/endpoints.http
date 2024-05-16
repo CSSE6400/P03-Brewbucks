@@ -1,0 +1,89 @@
+@baseurl = http://localhost:8080/api/v1
+
+
+# Health Check
+GET {{baseurl}}/health
+
+
+# Create Test User
+GET {{baseurl}}/users_test
+
+### Proposed Endpoints
+
+# Create New User
+POST {{baseurl}}/users
+Content-Type: application/json
+
+{
+  "username": "johndoe",
+  "password": "password",
+  "name": "John Doe",
+  // Other user fields...
+}
+
+# Login User
+POST {{baseurl}}/users/login
+Content-Type: application/json
+
+{
+  "username": "johndoe",
+  "password": "password"
+}
+
+# Get User Information
+GET {{baseurl}}/users/{user_id}
+
+# Update User Information
+PUT {{baseurl}}/users/{user_id}
+Content-Type: application/json
+
+{
+  // Updated user fields...
+}
+
+# Delete User
+DELETE {{baseurl}}/users/{user_id}
+
+# Get All Orders for a User
+GET {{baseurl}}/users/{user_id}/orders
+
+# Create New Order for a User
+POST {{baseurl}}/users/{user_id}/orders
+Content-Type: application/json
+
+{
+  // Order details...
+}
+
+# Get Order Information
+GET {{baseurl}}/users/{user_id}/orders/{order_id}
+
+# Update Order Information
+PUT {{baseurl}}/users/{user_id}/orders/{order_id}
+Content-Type: application/json
+
+{
+  // Updated order fields...
+}
+
+# Get All Items in an Order
+GET {{baseurl}}/users/{user_id}/orders/{order_id}/items
+
+# Add an Item to an Order
+POST {{baseurl}}/users/{user_id}/orders/{order_id}/items
+Content-Type: application/json
+
+{
+  // Item details...
+}
+
+# Add Payment to an Order
+POST {{baseurl}}/users/{user_id}/orders/{order_id}/payment
+Content-Type: application/json
+
+{
+  // Payment details...
+}
+
+# Get Payment Information for an Order
+GET {{baseurl}}/users/{user_id}/orders/{order_id}/payment
