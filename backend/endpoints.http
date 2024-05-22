@@ -1,11 +1,11 @@
 @baseurl = http://localhost:8080/api/v1
 
 
-# Health Check
+### Health Check
 GET {{baseurl}}/health
 
 
-# Create Test User
+### Create Test User
 GET {{baseurl}}/users_test
 
 ### Proposed Endpoints
