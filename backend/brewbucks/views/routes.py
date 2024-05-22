@@ -15,3 +15,11 @@ def create_test_user():
     db.session.add(user)
     db.session.commit()
     return jsonify(user.to_dict()), 201
+
+@api.route('/users/<int:user_id>', methods=['GET'])
+def get_user_information(user_id):
+    user = Users.query.get(user_id)
+    if user:
+        return jsonify(user.to_dict()), 200
+    else:
+        return jsonify({"error": "User not found"}), 404
