@@ -1,0 +1,40 @@
+name: flask backend API test
+
+on:
+  push:
+    branches:
+      - 12-automated-testing-with-github-actions
+  pull_request:
+    branches:
+      - 12-automated-testing-with-github-actions
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+      
+    - name: Change to backend directory
+      run: cd backend
+
+    - name: Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+
+    - name: Configure Poetry
+      run: |
+        echo "PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
+        poetry config virtualenvs.create false
+
+    - name: Install dependencies
+      run: |
+        poetry install --no-interaction
+
+    - name: Run tests
+      run: |
+        poetry run pytest
