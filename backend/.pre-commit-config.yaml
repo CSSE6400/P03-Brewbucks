@@ -5,4 +5,3 @@ repos:
       - id: black
         language_version: python3.11  # Replace with your Python version
         files: ^backend/.*\.py$
-
