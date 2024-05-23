@@ -18,10 +18,10 @@ const SignUp = () => {
 
                 <div id="input" className="flex-col space-y-2">
                     <div className="">
-                        <input type="text" placeholder="Username" class="input input-bordered input-sm w-full max-w-md" />
+                        <input type="text" placeholder="Create your username" class="input input-bordered input-sm w-full max-w-md" />
                     </div>
                     <div>
-                        <input type="text" placeholder="Password" class="input input-bordered input-sm w-full max-w-md" />
+                        <input type="text" placeholder="Create your password" class="input input-bordered input-sm w-full max-w-md" />
                     </div>
                 </div>
 
