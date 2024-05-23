@@ -87,7 +87,6 @@ def test_delete_non_existing_user(client):
 
 
 def test_delete_sample_user(client, sample_user):
-
     user = db.session.get(Users, sample_user.user_id)
     print(user.user_id)
     response = client.delete(f"/api/v1/users/{sample_user.user_id}")

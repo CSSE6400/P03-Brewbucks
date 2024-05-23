@@ -4,7 +4,12 @@
    ```shell
    poetry install --no-root
    ```
-2. Start the Poetry server:
+2. We use pre commits for the backend part of the project to minimze the diff.
+   ```shell
+   poetry run pre-commit install
+   ```
+
+3. Start the Flask server:
    ```shell
    poetry run flask --app brewbucks run --host 0.0.0.0 --port 8080
    ```
