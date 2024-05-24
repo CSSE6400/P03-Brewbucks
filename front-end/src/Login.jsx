@@ -1,46 +1,64 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Button from "./components/Button";
+import Input from "./components/Input";
+import Logo from "./images/logo.png";
 
 const Login = () => {
+    const [showSignUp, setShowSignUp] = useState(false);
+    const navigate = useNavigate();
 
-    let navigate = useNavigate();
     const homeRoute = () => {
         let path = '/home';
         navigate(path);
-    }
+    };
 
-    const signUpRoute = () => {
-        let path = '/signup';
-        navigate(path);
-    }
+    const toggleForm = () => {
+        setShowSignUp(!showSignUp);
+    };
 
     return (
-        <div className="bg-gray-100 p-4 h-screen flex justify-center items-center">
-            <div className="bg-white rounded-2xl p-10 w-1/3 flex-col space-y-10">
+        <div className="h-screen w-screen bg-gradient-to-tl from-gray-200 via-indigo-200 to-stone-100 p-4 flex justify-center items-center">
+            <div className="bg-white rounded-2xl w-1/2 shadow-2xl flex h-1/2">
 
-                <div id="heading flex-col">
-                    <p className="text-3xl text-indigo-900 font-bold">BREWBUCKS</p> 
-                </div>
-
-                <div id="input" className="flex-col space-y-2">
-                    <div className="">
-                        <input type="text" placeholder="Username" class="input input-bordered input-sm w-full max-w-md" />
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Password" class="input input-bordered input-sm w-full max-w-md" />
-                    </div>
-                </div>
-
-                <div id="Buttons" className="flex-col space-y-2">
-                    <div className="flex-col space-y-2">
-                        <button onClick={homeRoute} className="btn btn-sm rounded-lg bg-indigo-900 p-2 content-center w-1/3">
-                            <p className="text-white">
-                                Login
-                            </p>
-                        </button> 
-                        <div className="text-xs font-semibold flex space-x-1">
-                            <p className="">Not a member?</p><a className="text-indigo-900" href="" onClick={signUpRoute}>Sign Up</a>
+                {showSignUp ? (
+                    <div id="signUp" className='flex flex-col items-center justify-center space-y-5 p-10 w-1/2'>
+                        <div>
+                            <p className="text-3xl text-indigo-900 font-bold">SIGN UP</p> 
+                        </div>
+                        <div className="space-y-2 w-full">
+                            <Input placeholder={"First Name"}></Input>
+                            <Input placeholder={"Last Name"}></Input>
+                            <Input placeholder={"Username"}></Input>
+                            <Input placeholder={"Password"}></Input>
+                        </div>
+                        <div className="space-y-2 w-full">
+                            <Button click={toggleForm} text={"Sign Up"} width={"100%"}></Button>
+                            <div className="text-xs font-semibold flex space-x-1">
+                                <p className="">Already a member?</p><button onClick={toggleForm} className="text-indigo-900">Log In</button>
+                            </div>
                         </div>
                     </div>
+                ) : (
+                    <div id="logIn" className='flex flex-col items-center justify-center space-y-5 p-10 w-1/2'>
+                        <div>
+                            <p className="text-3xl text-indigo-900 font-bold">LOG IN</p> 
+                        </div>
+                        <div className="space-y-2 w-full">
+                            <Input placeholder={"Username"}></Input>
+                            <Input placeholder={"Password"}></Input>
+                        </div>
+                        <div className="space-y-2 w-full">
+                            <Button click={homeRoute} text={"Login"} width={"100%"}></Button>
+                            <div className="text-xs font-semibold flex space-x-1">
+                                <p className="">Not a member?</p><button onClick={toggleForm} className="text-indigo-900">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+                
+                <div className='bg-indigo-900 w-1/2 rounded-2xl flex items-center justify-center'>
+                    <img src={Logo} className="filter brightness-0 invert h-70" alt="Logo"></img>
                 </div>
 
             </div>
