@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Button from "./components/Button";
 import Input from "./components/Input";
 import Logo from "./images/logo.png";
+import './styles.css';
+
 
 const Login = () => {
     const [showSignUp, setShowSignUp] = useState(false);
@@ -18,7 +20,8 @@ const Login = () => {
     };
 
     return (
-        <div className="h-screen w-screen bg-gradient-to-tl from-gray-200 via-indigo-200 to-stone-100 p-4 flex justify-center items-center">
+        <div className="h-screen w-screen p-4 flex justify-center items-center custom-background">
+        
             <div className="bg-white rounded-2xl w-1/2 shadow-2xl flex h-1/2">
 
                 {showSignUp ? (

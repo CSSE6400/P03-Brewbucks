@@ -1,9 +1,11 @@
+import "../styles.css"
+
 const Button = ({text, click, width}) => {
 
     return (
         <div>
             <button onClick={click} className="btn btn-sm rounded-lg bg-indigo-900 p-2 content-center" style={{"width": width}}>
-                <p className="text-white">
+                <p className="text-white font-bold">
                     {text}
                 </p>
             </button> 

@@ -1,5 +1,6 @@
 import AvatarMenu from "./AvatarMenu";
 import { Navigate, useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 const Navbar = () => {
     let navigate = useNavigate();
@@ -15,19 +16,18 @@ const Navbar = () => {
 
 
     return (
-        <div className="bg-white p-4">
+        <div className="sticky top-0 z-50 shadow-md bg-white p-3">
             <div className="flex items-center space-x-3 justify-between pl-8 pr-8">
                 <p className="text-3xl text-indigo-900 font-bold">BREWBUCKS</p> 
-                <div className="flex space-x-4 items-center">
+                <div className="flex space-x-8 items-center">
                     <div className="flex space-x-2">
-                        <button onClick={homeRoute} className="btn btn-sm content-center bg-indigo-900">
-                            <p className="font-bold text-white">Home</p>
-                        </button>
-                        <button onClick={ordersRoute} className="btn btn-sm content-center bg-indigo-900">
-                            <p className="font-bold text-white">Orders</p>
-                        </button>
+                        <Button click={homeRoute} text={"Home"} width={"100%"}></Button>
+                        <Button click={ordersRoute} text={"Orders"} width={"100%"}></Button>
                     </div>
-                    <AvatarMenu points={99999}></AvatarMenu>
+                    <div className="flex items-center space-x-2">
+                        <AvatarMenu points={99999}></AvatarMenu>
+                        
+                    </div>
                 </div>
             </div>
         </div>

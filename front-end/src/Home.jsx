@@ -1,13 +1,13 @@
 import Menu from "./components/Menu";
 import Cart from "./components/Cart";
 import Navbar from "./components/Navbar";
-import { useState } from "react";
+import './styles.css';
 
-const Home = () => {
+const Home = ({user}) => {
     return (
         <div>
-            <Navbar></Navbar>
-            <div className="bg-gray-100 p-4 h-dvh">
+            <Navbar user={user}></Navbar>
+            <div className="p-4 h-wscreen custom-background">
                 <div className="flex space-x-8 pt-4 pb-4 pr-10 pl-10">
                     <div className="w-3/4">
                         <Menu></Menu>

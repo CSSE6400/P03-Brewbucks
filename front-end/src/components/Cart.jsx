@@ -1,9 +1,9 @@
-import { useState } from "react";
 import CartItem from "./CartItem.jsx";
 import { PRODUCTS } from "../products.js";
 import {ShopContext} from "../context/ShopContext.jsx"
 import {useContext} from "react"
 import { Navigate, useNavigate } from "react-router-dom";
+
 
 const Cart = ({cart, setCart}) => {
     const {cartItems, removeFromCart, getTotal} = useContext(ShopContext)
@@ -18,16 +18,6 @@ const Cart = ({cart, setCart}) => {
     return (
         
         <div className="flex-col space-y-0.5">
-
-                <dialog id="orderConfirmationPopup" className="modal">
-                    <div className="modal-box">
-                        <h3 className="font-bold text-lg">Hello!</h3>
-                        <p className="py-4">Press ESC key or click outside to close</p>
-                    </div>
-                    <form method="dialog" className="modal-backdrop">
-                        <button>close</button>
-                    </form>
-                </dialog>
 
             <div className="bg-white shadow-sm p-3 rounded-lg ">
                 <p className="text-lg font-medium">Cart</p>
