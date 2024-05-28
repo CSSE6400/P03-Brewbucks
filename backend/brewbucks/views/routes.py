@@ -68,6 +68,22 @@ def login():
             "user": user.to_dict()
         }), 200
 
+#route to get user_id
+@api.route('users/user_id',methods= ['POST'])
+
+def user_id():
+    data = request.json
+    username = data.get("username")
+
+    if username == None:
+        return jsonify({"message": "Username is required"}), 400
+    
+    user = Users.query.get(username = username).first()
+
+    if user is None:
+        return jsonify({"error": "User not found"}), 404
+    return jsonify({"user_id":user.user_id}),200
+    
 # Route to get a user by their user ID
 @api.route('/users/<int:user_id>', methods=['GET'])
 def get_user(user_id):
@@ -231,6 +247,39 @@ def create_menu_item():
     db.session.commit()
     return jsonify(new_item.to_dict()), 201
 
+# Route to create a new order item based on menu item id
+@api.route('/order_items', methods=['POST'])
+def create_order_item():
+    data = request.get_json()
+    if not data:
+        return jsonify({'error': 'No input data provided'}), 400
+    
+    user_id = data.get('user_id')
+    order_id = data.get('order_id')
+    menu_item_id = data.get('menu_item_id')
+    quantity = data.get('quantity', 1)
+
+    if not all([user_id, order_id, menu_item_id, quantity]):
+        return jsonify({'error': 'Missing required parameters'}), 400
+
+    user = Users.query.filter_by(user_id=user_id).first()
+    if user is None:
+        return jsonify({'error': 'User not found'}), 404
+    
+    order = Orders.query.filter_by(order_id=order_id, user_id=user_id).first()
+    if order is None:
+        return jsonify({'error': 'Order not found'}), 404
+
+    menu_item = MenuItems.query.filter_by(item_id=menu_item_id, orderable=True).first()
+    if menu_item is None:
+        return jsonify({'error': 'Menu item not found or not orderable'}), 404
+
+    new_order_item = OrderItems(order_id=order_id, menu_item_id=menu_item_id, quantity=quantity)
+    db.session.add(new_order_item)
+    db.session.commit()
+    return jsonify(new_order_item.to_dict()), 201
+
+
 # Route to update a menu item by its ID
 @api.route('/menu_items/<int:item_id>', methods=['PUT'])
 def update_menu_item(item_id):
@@ -274,14 +323,28 @@ def update_menu_item(item_id):
     return jsonify(item.to_dict()), 200
 
 # Route to delete a menu item by its ID
-@api.route('/menu_items/<int:item_id>', methods=['DELETE'])
-def delete_menu_item(item_id):
+@api.route('/menu_items', methods=['DELETE'])
+def delete_menu_item():
+    data = request.json
+    user_id = data.get("user_id")
+    item_id = data.get("item_id")
+    
+    if not user_id or not item_id:
+        return jsonify({'error': 'Missing required parameter: user_id or item_id'}), 400
+    
+    user = Users.query.filter_by(user_id=user_id, role="employee")
+    
+    if user is None:
+        return jsonify({'error': 'User access denied'}), 403
+    
     item = MenuItems.query.get(item_id)
+    
     if item is None:
         return jsonify({'error': 'Menu item not found'}), 404
-
+    
     db.session.delete(item)
     db.session.commit()
+    
     return jsonify({'message': 'Menu item deleted successfully'}), 200
 
 # Route to add order items to a specific order for a user

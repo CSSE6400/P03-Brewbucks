@@ -76,6 +76,11 @@ Get api/v1/users/19/orders
     ,"rewards_added":10
 }
 
+# Route to create a new order item based on menu item id
+@api.route('/order_items', methods=['POST'])
+
+creates order_items based on the menu_item_id and order provided
+
 8. `GET` `api/v1/users/{user_id}/orders/{order_id}`:(Done)
 - Get order information.
     example: api/v1/users/19/orders/1
@@ -118,4 +123,4 @@ api/v1/users/{user_id}/orders/{order_id}/items`
 - Updates an existing menu item by item_id. Expects JSON data with any fields to update (name, description, price, orderable).
 
 18. DELETE /menu_items/<int:item_id>:
-- Deletes a menu item by item_id
+- Deletes a menu item by item_id if the user is a employee
