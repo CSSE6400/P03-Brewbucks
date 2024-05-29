@@ -179,13 +179,13 @@ def create_user_order():
         return jsonify({'error': 'User not found'}), 404
 
     try:
-        payment_status_enum = PaymentStatus(payment_status)
-    except ValueError:
+        payment_status_enum = PaymentStatus[payment_status]
+    except KeyError:
         return jsonify({'error': 'Invalid payment status provided'}), 400
 
     try:
-        order_status_enum = OrderStatus(order_status)
-    except ValueError:
+        order_status_enum = OrderStatus[order_status]
+    except KeyError:
         return jsonify({'error': 'Invalid order status provided'}), 400
 
     new_order = Orders(user_id=user_id, total=total, payment_status=payment_status_enum, order_status=order_status_enum, rewards_added=rewards_added)

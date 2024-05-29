@@ -214,13 +214,20 @@ def test_delete_menu_item(client, sample_menu_item, sample_user):
 def test_create_order_success(client, sample_user):
     order_data = {
         "user_id": sample_user.user_id,
-        "total": 10,
+        "total": 10.0,
         "payment_status": PaymentStatus.Pending.name,  
         "order_status": OrderStatus.Processing.name,  
         "rewards_added": 5
     }
+    print(f"Order data being sent: {order_data}")  # 打印发送的数据
+
     response = client.post("/api/v1/users/orders", json=order_data)
+    print(f"Response status code: {response.status_code}")  # 打印返回的状态码
+    print(f"Response data: {response.json}")  # 打印返回的数据
+
     assert response.status_code == 201
+    assert response.json["total"] == order_data["total"]
+
 
 
 def test_create_order_invalid_user(client):

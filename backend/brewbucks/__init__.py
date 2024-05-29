@@ -25,7 +25,7 @@ def create_app(config_overrides=None):
       db.session.commit() 
  
    # Register the blueprints 
-   from brewbucks.views.routes import api 
+   from backend.brewbucks.views.routes import api 
    app.register_blueprint(api) 
  
    return app
