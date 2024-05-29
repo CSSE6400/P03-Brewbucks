@@ -6,7 +6,7 @@
    ```
 2. Start the Poetry server:
    ```shell
-   poetry run flask --app brewbucks run --host 0.0.0.0 --port 8080
+   poetry run flask --app brewbucks run --host 0.0.0.0 --port 8080 --debug
    ```
 
 ## Docker Image
