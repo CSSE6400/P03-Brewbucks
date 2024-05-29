@@ -1,7 +1,12 @@
 import pytest
 from brewbucks import create_app
-from brewbucks.models.users import db, Users
-from flask import json, jsonify
+from brewbucks.models import db
+from brewbucks.models.users import Users, Roles
+from brewbucks.models.order import Orders, OrderStatus
+from brewbucks.models.payments import PaymentStatus
+from brewbucks.models.menu_item import MenuItems
+from brewbucks.models.order_items import OrderItems
+from flask import jsonify
 
 
 @pytest.fixture
@@ -45,18 +50,15 @@ def sample_user(app):
 def runner(app):
     return app.test_cli_runner()
 
-
 def test_health(client):
     response = client.get("/api/v1/health")
     assert response.status_code == 200
     assert response.json == {"status": "Healthy"}
 
-
 def test_create_test_user(client):
     response = client.post("/api/v1/users_test")
     assert response.status_code == 201
     assert "johndoe" in response.json["username"]
-
 
 def test_create_user(client):
     user_data = {
@@ -73,23 +75,148 @@ def test_create_user(client):
     assert response.json["last_name"] == user_data["last_name"]
     assert response.json["role"] == user_data["role"]
 
-
 def test_get_user_information(client, sample_user):
     response = client.get(f"/api/v1/users/{sample_user.user_id}")
     assert response.status_code == 200
     assert response.json["username"] == "sampleuser"
 
-
-def test_delete_non_existing_user(client):
-    response = client.delete("/api/v1/users/9999")  # Assuming 9999 is a non-existing ID
-    assert response.status_code == 404
-    assert response.json["error"] == "User not found"
-
+def test_update_user_info(client, sample_user):
+    update_data = {
+        "first_name": "Updated",
+        "last_name": "User"
+    }
+    response = client.put(f"/api/v1/users/{sample_user.user_id}", json=update_data)
+    assert response.status_code == 200
+    assert response.json["first_name"] == "Updated"
+    assert response.json["last_name"] == "User"
 
 def test_delete_sample_user(client, sample_user):
-
     user = db.session.get(Users, sample_user.user_id)
     print(user.user_id)
     response = client.delete(f"/api/v1/users/{sample_user.user_id}")
     assert response.status_code == 200
     assert response.json["message"] == "User deleted successfully"
+
+def test_delete_non_existing_user(client):
+    response = client.delete("/api/v1/users/9999") # Assuming 9999 is a non-existing ID
+    assert response.status_code == 404
+    assert response.json["error"] == "User not found"
+
+def test_user_login(client, sample_user):
+    login_data = {
+        "username": "sampleuser",
+        "password": "password"
+    }
+    response = client.post("/api/v1/login", json=login_data)
+    assert response.status_code == 200
+    assert "access_token" in response.json
+
+    invalid_login_data = {
+        "username": "sampleuser",
+        "password": "wrongpassword"
+    }
+    response = client.post("/api/v1/login", json=invalid_login_data)
+    assert response.status_code == 401
+    assert response.json["error"] == "Invalid credentials"
+
+def test_get_menu_items(client, sample_menu_item):
+    response = client.get("/api/v1/menu_items")
+    assert response.status_code == 200
+    assert isinstance(response.json, list)
+    assert any(item["name"] == sample_menu_item.name for item in response.json)
+
+def test_create_menu_item(client, sample_user):
+    item_data = {
+        "user_id": sample_user.user_id,
+        "name": "Espresso",
+        "description": "Strong and bold",
+        "price": 3.0,
+        "orderable": True
+    }
+    response = client.post("/api/v1/menu_items", json=item_data)
+    assert response.status_code == 201
+    assert response.json["name"] == item_data["name"]
+
+def test_update_menu_item(client, sample_user, sample_menu_item):
+    update_data = {
+        "name": "Updated Espresso",
+        "description": "Strong and bold",
+        "price": 3.0,
+        "orderable": True
+    }
+    response = client.put(f"/api/v1/menu_items/{sample_menu_item.item_id}", json=update_data)
+    assert response.status_code == 200
+    assert response.json["name"] == "Updated Espresso"
+
+def test_delete_menu_item(client, sample_menu_item):
+    response = client.delete(f"/api/v1/menu_items/{sample_menu_item.item_id}")
+    assert response.status_code == 200
+    assert response.json["message"] == "Menu item deleted successfully"
+ 
+def test_create_order(client, sample_user):
+    order_data = {
+        "user_id": sample_user.user_id,
+        "total": 10.0,
+        "payment_status": "Pending",
+        "order_status": "Processing",
+        "rewards_added": 5
+    }
+    response = client.post("/api/v1/users/orders", json=order_data)
+    assert response.status_code == 201
+    assert response.json["total"] == order_data["total"]
+
+def test_get_order_items(client, sample_user, sample_order, sample_menu_item):
+    item_data = {
+        "user_id": sample_user.user_id,
+        "order_id": sample_order.order_id,
+        "menu_item_id": sample_menu_item.item_id,
+        "quantity": 1
+    }
+    client.post("/api/v1/order_items", json=item_data)
+    response = client.get(f"/api/v1/users/{sample_user.user_id}/orders/{sample_order.order_id}/items")
+    assert response.status_code == 200
+    assert isinstance(response.json, list)
+    assert any(item["menu_item_id"] == sample_menu_item.item_id for item in response.json)
+
+def test_add_order_item(client, sample_user, sample_order, sample_menu_item):
+    item_data = {
+        "user_id": sample_user.user_id,
+        "order_id": sample_order.order_id,
+        "menu_item_id": sample_menu_item.item_id,
+        "quantity": 2
+    }
+    response = client.post("/api/v1/order_items", json=item_data)
+    assert response.status_code == 201
+    assert response.json["menu_item_id"] == sample_menu_item.item_id
+    assert response.json["quantity"] == item_data["quantity"]
+
+def test_update_order_item(client, sample_user, sample_order, sample_menu_item):
+    item_data = {
+        "user_id": sample_user.user_id,
+        "order_id": sample_order.order_id,
+        "menu_item_id": sample_menu_item.item_id,
+        "quantity": 1
+    }
+    post_response = client.post("/api/v1/order_items", json=item_data)
+    order_item_id = post_response.json["order_item_id"]
+    update_data = {
+        "quantity": 3
+    }
+    response = client.put(f"/api/v1/users/{sample_user.user_id}/orders/{sample_order.order_id}/items/{order_item_id}", json=update_data)
+    assert response.status_code == 200
+    assert response.json["quantity"] == update_data["quantity"]
+
+def test_delete_order_item(client, sample_user, sample_order, sample_menu_item):
+    item_data = {
+        "user_id": sample_user.user_id,
+        "order_id": sample_order.order_id,
+        "menu_item_id": sample_menu_item.item_id,
+        "quantity": 1
+    }
+    post_response = client.post("/api/v1/order_items", json=item_data)
+    order_item_id = post_response.json["order_item_id"]
+    response = client.delete(f"/api/v1/users/{sample_user.user_id}/orders/{sample_order.order_id}/items/{order_item_id}")
+    assert response.status_code == 200
+    assert response.json["message"] == "Order item deleted successfully"
+
+
