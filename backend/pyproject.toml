@@ -6,7 +6,7 @@ authors = ["Nimesh Garg"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 Flask = "^3.0.3"
 Flask-SQLAlchemy = "^3.1.1"
 psycopg2-binary = "^2.9.9"
