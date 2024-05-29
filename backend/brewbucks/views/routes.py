@@ -1,8 +1,9 @@
 from flask import Blueprint, jsonify, request
+from datetime import datetime,timezone
 from brewbucks.models import db
 from brewbucks.models.users import Users, Roles
 from brewbucks.models.order import Orders, OrderStatus
-from brewbucks.models.payments import PaymentStatus
+from brewbucks.models.payments import PaymentStatus,Payments
 from brewbucks.models.menu_item import MenuItems
 from brewbucks.models.order_items import OrderItems
 from brewbucks.models.rewards import Rewards
@@ -191,6 +192,46 @@ def create_user_order():
     db.session.add(new_order)
     db.session.commit()
     return jsonify(new_order.to_dict()), 201
+
+@api.route('/users/orders', methods =["PUT"])
+def update_order():
+    data = request.get_json()
+
+    if not data:
+        return jsonify({'error': 'No input data provided'}), 400
+    user_id = data.get("user_id") 
+    order_id = data.get("order_id")
+
+    if (user_id or order_id) is None:
+        return jsonify({'error': 'Missing required parameter: order_id'}), 400
+    order = Orders.query.get(order_id)
+    if order is None:
+        return jsonify({'error': 'Order not found'}), 404
+    
+    if 'payment_status' in data:
+        try:
+            payment_status_enum = PaymentStatus(data['payment_status'])
+            order.payment_status = payment_status_enum
+        except ValueError:
+            return jsonify({'error': 'Invalid payment status provided'}), 400
+
+    if 'order_status' in data:
+        try:
+            order_status_enum = OrderStatus(data['order_status'])
+            order.order_status = order_status_enum
+        except ValueError:
+            return jsonify({'error': 'Invalid order status provided'}), 400
+
+    if 'rewards_added' in data:
+        order.rewards_added = data['rewards_added']
+
+    if 'total' in data:
+        order.total = data['total']
+    
+    order.updated_at = datetime.now(timezone.utc)
+    order.update_remarks = f"Updated by user_id: {user_id}"
+    db.session.commit()
+    return jsonify(order.to_dict()), 200
 
 ''' 
 
@@ -450,4 +491,3 @@ def delete_order_item(user_id, order_id, order_item_id):
     db.session.delete(order_item)
     db.session.commit()
     return jsonify({'message': 'Order item deleted successfully'}), 200
-
