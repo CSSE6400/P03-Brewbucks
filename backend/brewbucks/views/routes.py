@@ -170,7 +170,7 @@ def create_user_order():
     order_status = data.get('order_status', OrderStatus.Processing)  # Defaults to processing
     rewards_added = data.get('rewards_added', 0)  # Defaults to 0 points
 
-    if (total,user_id) is None:
+    if total is None or user_id is None:
         return jsonify({'error': 'Missing required parameter: total'}), 400
     
     user = Users.query.get(user_id)
@@ -295,7 +295,7 @@ def update_menu_item(item_id):
     if not all([user_id is not None]):
         return jsonify({'error': 'Missing required parameter : user_id'}), 400
     
-    user = Users.query.get(user_id = user_id,role = "employee")
+    user = Users.query.filter_by(user_id=user_id, role=Roles.Employee).first()
     if user is None:
         return jsonify({'error':'User access denied'}),400
     
