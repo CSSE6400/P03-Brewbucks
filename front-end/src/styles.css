@@ -1,0 +1,4 @@
+.custom-background {
+    background-color: rgb(204, 251, 241);
+    background-image: radial-gradient(at 75% 23%, rgb(255, 237, 213) 0, transparent 57%), radial-gradient(at 88% 26%, rgb(252, 231, 243) 0, transparent 84%), radial-gradient(at 67% 30%, rgb(55, 48, 163) 0, transparent 87%), radial-gradient(at 19% 82%, rgb(63, 63, 70) 0, transparent 71%), radial-gradient(at 100% 93%, rgb(124, 58, 237) 0, transparent 63%), radial-gradient(at 55% 48%, rgb(120, 113, 108) 0, transparent 85%);
+}

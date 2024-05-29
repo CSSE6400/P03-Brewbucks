@@ -7,17 +7,20 @@ from brewbucks.models.menu_item import MenuItems
 from brewbucks.models.order_items import OrderItems
 from brewbucks.models.rewards import Rewards
 
-api = Blueprint('api', __name__, url_prefix='/api/v1')
 
-# Health check route to ensure the API is running
-@api.route('/health', methods=['GET'])
+api = Blueprint("api", __name__, url_prefix="/api/v1")
+
+
+@api.route("/health", methods=["GET"])
 def health():
     return jsonify({"status": "Healthy"}), 200
 
-# Route to create a test user for testing purposes
-@api.route('/users_test', methods=['GET'])
+
+@api.route("/users_test", methods=["POST"])
 def create_test_user():
-    user = Users(first_name='John', last_name='Doe', password='password', username='johndoe')
+    user = Users(
+        first_name="John", last_name="Doe", password="password", username="johndoe"
+    )
     db.session.add(user)
     db.session.commit()
     return jsonify(user.to_dict()), 201
@@ -449,3 +452,4 @@ def delete_order_item(user_id, order_id, order_item_id):
     db.session.delete(order_item)
     db.session.commit()
     return jsonify({'message': 'Order item deleted successfully'}), 200
+

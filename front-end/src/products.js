@@ -35,4 +35,16 @@ export const PRODUCTS = [
         desc: "This is where the description of the product will go",
         price: 5.00,
     }, 
+    {
+        id: 7,
+        type: "Macchiato",
+        desc: "This is where the description of the product will go",
+        price: 5.00,
+    }, 
+    {
+        id: 8,
+        type: "Macchiato",
+        desc: "This is where the description of the product will go",
+        price: 5.00,
+    }, 
 ];
