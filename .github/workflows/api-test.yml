@@ -3,10 +3,10 @@ name: Flask backend API test
 on:
   push:
     branches:
-      - 26-improve-backend-testing
+      - main
   pull_request:
     branches:
-      - 26-improve-backend-testing
+      - main
 
 jobs:
   build:
