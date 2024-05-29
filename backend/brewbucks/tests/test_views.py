@@ -32,6 +32,7 @@ def sample_user(app):
             password="password",
             first_name="Sample",
             last_name="User",
+            role=Roles.Employee,
         )
         db.session.add(user)
         db.session.commit()
@@ -80,15 +81,19 @@ def test_get_user_information(client, sample_user):
     assert response.status_code == 200
     assert response.json["username"] == "sampleuser"
 
+
+
 def test_update_user_info(client, sample_user):
     update_data = {
+        "user_id": sample_user.user_id,
         "first_name": "Updated",
         "last_name": "User"
     }
-    response = client.put(f"/api/v1/users/{sample_user.user_id}", json=update_data)
+    response = client.put('/api/v1/users', json=update_data)
     assert response.status_code == 200
     assert response.json["first_name"] == "Updated"
     assert response.json["last_name"] == "User"
+
 
 def test_delete_sample_user(client, sample_user):
     user = db.session.get(Users, sample_user.user_id)
@@ -107,7 +112,7 @@ def test_user_login(client, sample_user):
         "username": "sampleuser",
         "password": "password"
     }
-    response = client.post("/api/v1/login", json=login_data)
+    response = client.post("/api/v1/users/login", json=login_data)
     assert response.status_code == 200
     assert "access_token" in response.json
 
@@ -115,17 +120,11 @@ def test_user_login(client, sample_user):
         "username": "sampleuser",
         "password": "wrongpassword"
     }
-    response = client.post("/api/v1/login", json=invalid_login_data)
+    response = client.post("/api/v1/users/login", json=invalid_login_data)
     assert response.status_code == 401
     assert response.json["error"] == "Invalid credentials"
 
-def test_get_menu_items(client, sample_menu_item):
-    response = client.get("/api/v1/menu_items")
-    assert response.status_code == 200
-    assert isinstance(response.json, list)
-    assert any(item["name"] == sample_menu_item.name for item in response.json)
-
-def test_create_menu_item(client, sample_user):
+def test_create_menu_item1(client, sample_user):
     item_data = {
         "user_id": sample_user.user_id,
         "name": "Espresso",
@@ -136,6 +135,24 @@ def test_create_menu_item(client, sample_user):
     response = client.post("/api/v1/menu_items", json=item_data)
     assert response.status_code == 201
     assert response.json["name"] == item_data["name"]
+
+def test_create_menu_item2(client, sample_user):
+    item_data = {
+        "user_id": sample_user.user_id,
+        "name": "Latte",
+        "description": "Smooth and creamy",
+        "price": 3.0,
+        "orderable": True
+    }
+    response = client.post("/api/v1/menu_items", json=item_data)
+    assert response.status_code == 201
+    assert response.json["name"] == item_data["name"]
+
+def test_get_menu_items(client, sample_menu_item):
+    response = client.get("/api/v1/menu_items")
+    assert response.status_code == 200
+    assert isinstance(response.json, list)
+    assert any(item["name"] == sample_menu_item.name for item in response.json)
 
 def test_update_menu_item(client, sample_user, sample_menu_item):
     update_data = {
