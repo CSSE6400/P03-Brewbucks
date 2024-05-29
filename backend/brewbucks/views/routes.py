@@ -22,6 +22,8 @@ def create_test_user():
     db.session.commit()
     return jsonify(user.to_dict()), 201
 
+###User routes###
+
 # Route to create a new user
 @api.route('/users', methods=['POST'])
 def create_user():
@@ -94,7 +96,7 @@ def get_user(user_id):
 
 # Route to update a user by their user ID
 @api.route('/users', methods=['PUT'])
-def update_user():
+def update_user_info():
     data = request.get_json()
 
     if not data:
@@ -125,6 +127,21 @@ def update_user():
 
     db.session.commit()
     return jsonify(user.to_dict()), 200
+
+# Route to delete a user by their user ID
+@api.route('/users', methods=['DELETE'])
+def delete_user(user_id):
+    data = request.json
+    user_id = data.get("user_id")
+    user = Users.query.get(user_id)
+    if user is None:
+        return jsonify({'error': 'User not found'}), 404
+
+    db.session.delete(user)
+    db.session.commit()
+    return jsonify({'message': 'User deleted successfully'}), 200
+
+###Order routes###
 
 # Route to get all orders for a specific user
 @api.route('/users/<int:user_id>/orders', methods=['GET'])
@@ -174,31 +191,11 @@ def create_user_order():
     db.session.commit()
     return jsonify(new_order.to_dict()), 201
 
-# Route to delete a user by their user ID
-@api.route('/users/<int:user_id>', methods=['DELETE'])
-def delete_user(user_id):
-    user = Users.query.get(user_id)
-    if user is None:
-        return jsonify({'error': 'User not found'}), 404
+''' 
 
-    db.session.delete(user)
-    db.session.commit()
-    return jsonify({'message': 'User deleted successfully'}), 200
+ Menu routes
 
-# Route to get all items in an order for a specific user and order
-@api.route('/users/<int:user_id>/orders/<int:order_id>/items', methods=['GET'])
-def get_order_items(user_id, order_id):
-    order = Orders.query.filter_by(order_id=order_id, user_id=user_id).first()
-    if not order:
-        return jsonify({'error': 'Order not found for the user'}), 404
-
-    order_items = OrderItems.query.filter_by(order_id=order_id).all()
-    if not order_items:
-        return jsonify({'error': 'No items found for this order'}), 404
-
-    items_list = [item.to_dict() for item in order_items]
-    return jsonify(items_list), 200
-
+'''
 # Route to get all menu items
 @api.route('/menu_items', methods=['GET'])
 def get_menu_items():
@@ -347,8 +344,24 @@ def delete_menu_item():
     
     return jsonify({'message': 'Menu item deleted successfully'}), 200
 
+##Routes for orderItems##
+
+# Route to get all items in an order for a specific user and order
+@api.route('/users/<int:user_id>/orders/<int:order_id>/items', methods=['GET'])
+def get_order_items(user_id, order_id):
+    order = Orders.query.filter_by(order_id=order_id, user_id=user_id).first()
+    if not order:
+        return jsonify({'error': 'Order not found for the user'}), 404
+
+    order_items = OrderItems.query.filter_by(order_id=order_id).all()
+    if not order_items:
+        return jsonify({'error': 'No items found for this order'}), 404
+
+    items_list = [item.to_dict() for item in order_items]
+    return jsonify(items_list), 200
+
 # Route to add order items to a specific order for a user
-@api.route('/users/<int:user_id>/orders/<int:order_id>/items', methods=['POST'])
+@api.route('/users/<int:user_id>/orders/<int:order_id>/items', methods=['POST']) 
 def add_order_items(user_id, order_id):
     user = Users.query.get(user_id)
     if user is None:
