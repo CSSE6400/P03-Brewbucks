@@ -1,5 +1,3 @@
-
-
 const Store = () => {
     return (
         <div className="bg-white shadow-sm p-5 rounded-lg flex justify-between">
