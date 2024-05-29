@@ -132,10 +132,8 @@ def update_user_info():
     return jsonify(user.to_dict()), 200
 
 # Route to delete a user by their user ID
-@api.route('/users', methods=['DELETE'])
+@api.route('/users/<int:user_id>', methods=['DELETE'])
 def delete_user(user_id):
-    data = request.json
-    user_id = data.get("user_id")
     user = Users.query.get(user_id)
     if user is None:
         return jsonify({'error': 'User not found'}), 404
