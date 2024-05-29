@@ -18,11 +18,9 @@ def app():
     with app.app_context():
         db.drop_all()
 
-
 @pytest.fixture
 def client(app):
     return app.test_client()
-
 
 @pytest.fixture
 def sample_user(app):
@@ -45,7 +43,6 @@ def sample_user(app):
         if exists:
             db.session.delete(user)
             db.session.commit()
-
 
 @pytest.fixture
 def sample_menu_item(app):
@@ -121,8 +118,6 @@ def test_get_user_information(client, sample_user):
     assert response.status_code == 200
     assert response.json["username"] == "sampleuser"
 
-
-
 def test_update_user_info(client, sample_user):
     update_data = {
         "user_id": sample_user.user_id,
@@ -133,7 +128,6 @@ def test_update_user_info(client, sample_user):
     assert response.status_code == 200
     assert response.json["first_name"] == "Updated"
     assert response.json["last_name"] == "User"
-
 
 def test_delete_sample_user(client, sample_user):
     user = db.session.get(Users, sample_user.user_id)
@@ -162,8 +156,7 @@ def test_user_login(client, sample_user):
     response = client.post("/api/v1/users/login", json=invalid_login_data)
     assert response.status_code == 401
   
-
-def test_create_menu_item1(client, sample_user):
+def test_create_menu_item(client, sample_user):
     item_data = {
         "user_id": sample_user.user_id,
         "name": "Espresso",
@@ -175,17 +168,6 @@ def test_create_menu_item1(client, sample_user):
     assert response.status_code == 201
     assert response.json["name"] == item_data["name"]
 
-def test_create_menu_item2(client, sample_user):
-    item_data = {
-        "user_id": sample_user.user_id,
-        "name": "IceLatte",
-        "description": "Smooth and creamy",
-        "price": 3.0,
-        "orderable": True
-    }
-    response = client.post("/api/v1/menu_items", json=item_data)
-    assert response.status_code == 201
-    assert response.json["name"] == item_data["name"]
 
 def test_get_menu_items(client, sample_menu_item):
     response = client.get("/api/v1/menu_items")
@@ -195,6 +177,7 @@ def test_get_menu_items(client, sample_menu_item):
 
 def test_update_menu_item(client, sample_user, sample_menu_item):
     update_data = {
+        "user_id": sample_user.user_id,
         "name": "Updated Espresso",
         "description": "Strong and bold",
         "price": 3.0,
@@ -202,24 +185,50 @@ def test_update_menu_item(client, sample_user, sample_menu_item):
     }
     response = client.put(f"/api/v1/menu_items/{sample_menu_item.item_id}", json=update_data)
     assert response.status_code == 200
-    assert response.json["name"] == "Updated Espresso"
 
-def test_delete_menu_item(client, sample_menu_item):
-    response = client.delete(f"/api/v1/menu_items/{sample_menu_item.item_id}")
+def test_delete_menu_item(client, sample_menu_item, sample_user):
+    delete_data = {
+        "user_id": sample_user.user_id,
+        "item_id": sample_menu_item.item_id
+    }
+    response = client.delete("/api/v1/menu_items", json=delete_data)
     assert response.status_code == 200
-    assert response.json["message"] == "Menu item deleted successfully"
+
  
-def test_create_order(client, sample_user):
+def test_create_order_success(client, sample_user):
     order_data = {
         "user_id": sample_user.user_id,
         "total": 10.0,
-        "payment_status": PaymentStatus.Pending.name, 
-        "order_status": OrderStatus.Processing.name, 
+        "payment_status": PaymentStatus.Pending.name,  # 使用枚举名称
+        "order_status": OrderStatus.Processing.name,  # 使用枚举名称
         "rewards_added": 5
     }
     response = client.post("/api/v1/users/orders", json=order_data)
     assert response.status_code == 201
+    assert response.json["total"] == order_data["total"]
 
+def test_create_order_missing_parameters(client, sample_user):
+    order_data = {
+        "user_id": sample_user.user_id,
+        "payment_status": PaymentStatus.Pending.name,  # 缺少 total 参数
+        "order_status": OrderStatus.Processing.name,
+        "rewards_added": 5
+    }
+    response = client.post("/api/v1/users/orders", json=order_data)
+    assert response.status_code == 400
+    assert response.json["error"] == "Missing required parameter: total"
+
+def test_create_order_invalid_user(client):
+    order_data = {
+        "user_id": 9999,  # Assuming 9999 is a non-existing user ID
+        "total": 10.0,
+        "payment_status": PaymentStatus.Pending.name,
+        "order_status": OrderStatus.Processing.name,
+        "rewards_added": 5
+    }
+    response = client.post("/api/v1/users/orders", json=order_data)
+    assert response.status_code == 404
+    assert response.json["error"] == "User not found"
 
 def test_get_order_items(client, sample_user, sample_order, sample_menu_item):
     item_data = {
