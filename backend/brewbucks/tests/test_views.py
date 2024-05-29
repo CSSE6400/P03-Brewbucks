@@ -214,7 +214,7 @@ def test_delete_menu_item(client, sample_menu_item, sample_user):
 def test_create_order_success(client, sample_user):
     order_data = {
         "user_id": sample_user.user_id,
-        "total": 10.0,
+        "total": 10,
         "payment_status": PaymentStatus.Pending.name,  
         "order_status": OrderStatus.Processing.name,  
         "rewards_added": 5

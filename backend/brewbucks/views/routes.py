@@ -171,7 +171,8 @@ def create_user_order():
     rewards_added = data.get('rewards_added', 0)  # Defaults to 0 points
 
     if total is None or user_id is None:
-        return jsonify({'error': 'Missing required parameter: total'}), 400
+        return jsonify({'error': 'Missing required parameter: total or user_id'}), 400
+
     
     user = Users.query.get(user_id)
     if user is None:
