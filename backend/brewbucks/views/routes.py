@@ -233,6 +233,21 @@ def update_order():
     db.session.commit()
     return jsonify(order.to_dict()), 200
 
+# Route to delete a order by its order ID
+@api.route('/users/orders', methods=['DELETE'])
+def delete_order():
+    data = request.json
+    order_id = data.get("order_id")
+    if order_id is None:
+        return jsonify({'error': 'Missing required parameter: order_id'}), 400
+    order = Orders.query.get(order_id)
+    if order is None:
+        return jsonify({'error': 'order not found'}), 404
+
+    db.session.delete(order)
+    db.session.commit()
+    return jsonify({'message': 'order deleted successfully'}), 200
+
 ''' 
 
  Menu routes
