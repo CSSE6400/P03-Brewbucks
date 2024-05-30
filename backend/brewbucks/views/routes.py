@@ -88,7 +88,8 @@ def user_id():
     if username == None:
         return jsonify({"message": "Username is required"}), 400
     
-    user = Users.query.get(username = username).first()
+     
+    user = Users.query.filter_by(username=username).first()
 
     if user is None:
         return jsonify({"error": "User not found"}), 404
