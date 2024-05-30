@@ -6,20 +6,20 @@ import { useState, useEffect } from 'react'
 import { useLocation } from "react-router-dom";
 import axios from 'axios'
 
-const Home = (props) => {
+const Home = () => {
     const [menu, setMenu] = useState([])
     const [error, setError] = useState(false)
     const [userId, setUserId] = useState()
 
     const location = useLocation()
-    const user = location.state.username
+    const username = location.state.username
     
     useEffect(() => {
 
         const fetchUserId = async () => {
             try {
                 const res = await axios.post("http://127.0.0.1:8080/api/v1/users/user_id", {
-                username: user,
+                username: username,
             });
             setUserId(res.data.user_id)
             } catch (error) {
@@ -40,9 +40,9 @@ const Home = (props) => {
     }, []);
 
     return (
-        <div>
-            <Navbar user={user} ></Navbar>
-            <div className="p-4 h-screen custom-background">
+        <div className="custom-background">
+            <Navbar user={username} ></Navbar>
+            <div className="p-4">
                 <div className="flex space-x-8 pt-4 pb-4 pr-10 pl-10">
                     <div className="w-3/4">
                         <Menu data={menu}></Menu>

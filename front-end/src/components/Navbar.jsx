@@ -5,14 +5,16 @@ import Button from "./Button";
 const Navbar = ({user}) => {
     let navigate = useNavigate();
 
+    const username = user
+
     const homeRoute = () => {
         let path = '/home';
-        navigate(path);
+        navigate(path, {state:{username: username}})
     }
 
     const ordersRoute = () => {
         let path = '/orders';
-        navigate(path);
+        navigate(path, {state:{username: username}});
     }
 
 
@@ -26,7 +28,7 @@ const Navbar = ({user}) => {
                         <Button click={ordersRoute} text={"Orders"} width={"100%"}></Button>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <AvatarMenu username={user}points={99999}></AvatarMenu>
+                        <AvatarMenu username={username}points={99999}></AvatarMenu>
                         
                     </div>
                 </div>

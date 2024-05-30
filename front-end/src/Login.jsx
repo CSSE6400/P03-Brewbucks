@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "./components/Button";
-import Input from "./components/Input";
 import Logo from "./images/logo.png";
 import './styles.css'
 import axios from 'axios'
-import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [showSignUp, setShowSignUp] = useState(false);
@@ -65,14 +63,14 @@ const Login = () => {
                         </div>
                         {
                             signUpError && <div className="text-xs text-red-500">
-                                <p>Incorrect username or password</p>
+                                <p>Incorrect parameters for sign up</p>
                             </div>
                         }
                         <div className="space-y-2 w-full">
-                            <input className="input input-bordered input-sm w-full max-w-md" placeholder={"First Name"} onChange={(e) => setFirstname(e.target.value)}></input>
-                            <input className="input input-bordered input-sm w-full max-w-md" placeholder={"Last Name"} onChange={(e) => setLastname(e.target.value)}></input>
-                            <input className="input input-bordered input-sm w-full max-w-md" placeholder={"Username"} onChange={(e) => setUsername(e.target.value)}></input>
-                            <input className="input input-bordered input-sm w-full max-w-md" placeholder={"Password"} onChange={(e) => setPassword(e.target.value)}></input>
+                            <input className="input input-bordered input-sm w-full max-w-md" value={firstname} placeholder={"First Name"} onChange={(e) => setFirstname(e.target.value)}></input>
+                            <input className="input input-bordered input-sm w-full max-w-md" value={lastname} placeholder={"Last Name"} onChange={(e) => setLastname(e.target.value)}></input>
+                            <input className="input input-bordered input-sm w-full max-w-md" value={username} placeholder={"Username"} onChange={(e) => setUsername(e.target.value)}></input>
+                            <input className="input input-bordered input-sm w-full max-w-md" value={password} placeholder={"Password"} onChange={(e) => setPassword(e.target.value)}></input>
                         </div>
                         <div className="space-y-2 w-full">
                             <Button click={signup} text={"Sign Up"} width={"100%"}></Button>
@@ -92,8 +90,8 @@ const Login = () => {
                             </div>
                         }
                         <div className="space-y-2 w-full">
-                            <input className="input input-bordered input-sm w-full max-w-md" placeholder={"Username"} onChange={(e) => setUsername(e.target.value)}></input>
-                            <input className="input input-bordered input-sm w-full max-w-md" placeholder={"Password"} onChange={(e) => setPassword(e.target.value)}></input>
+                            <input className="input input-bordered input-sm w-full max-w-md" value={username} placeholder={"Username"} onChange={(e) => setUsername(e.target.value)}></input>
+                            <input className="input input-bordered input-sm w-full max-w-md" value={password} placeholder={"Password"} onChange={(e) => setPassword(e.target.value)}></input>
                         </div>
                         <div className="space-y-2 w-full">
                             <Button click={login} text={"Login"} width={"100%"}></Button>
