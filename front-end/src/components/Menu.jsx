@@ -4,7 +4,7 @@ import {PRODUCTS} from "../products.js"
 import {ShopContext} from "../context/ShopContext.jsx"
 import {useContext} from "react"
 
-const Menu = () => {
+const Menu = ({data}) => {
     
     const {addToCart} = useContext(ShopContext)
 
@@ -13,8 +13,8 @@ const Menu = () => {
             <Store></Store>
             <div className="flex-col space-y-1.5">
                 {
-                    PRODUCTS.map((product) => {
-                        return <Coffee type={product.type} desc={product.desc} price={product.price} handleClick={() => addToCart(product.id)}></Coffee>;
+                    data.map((product) => {
+                        return <Coffee type={product.name} desc={product.description} price={product.price} handleClick={() => addToCart(product.id)}></Coffee>;
                     })
                 }
             </div>
