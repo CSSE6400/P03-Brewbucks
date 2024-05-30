@@ -137,6 +137,7 @@ Request Body:
     "username": "janesmith",
     "role": "Customer"
 }
+updates: made username unique
 2. Login
 POST /api/v1/users/login
 Request Body:
@@ -148,7 +149,6 @@ Request Body:
 PUT /api/v1/users
 Request Body:
 {
-    "user_id": 1,
     "first_name": "Jane",
     "last_name": "Doe",
     "password": "newpassword",
@@ -156,7 +156,10 @@ Request Body:
     "role": "Admin"
 }
 Order Routes
-1. Create User Order
+1. show all active orders
+GET /api/v1/users/active
+
+2. Create User Order
 POST /api/v1/users/orders
 Request Body:
 {
@@ -166,7 +169,7 @@ Request Body:
     "order_status": "Processing",
     "rewards_added": 50
 }
-2. Update Order
+3. Update Order
 PUT /api/v1/users/orders
 Request Body:
 {
@@ -177,13 +180,17 @@ Request Body:
     "rewards_added": 50,
     "total": 250.00
 }
-3. Delete Order
+4. Delete Order
 DELETE /api/v1/users/orders
 Request Body:
 {
     "order_id": 123
 }
 Menu Item Routes
+
+0. added a route to create test use-cases of menu_items
+POST /api/v1/test_menuitems
+
 1. Create Menu Item
 POST /api/v1/menu_items
 Request Body:

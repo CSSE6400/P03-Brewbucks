@@ -44,6 +44,10 @@ def create_user():
     if not all([first_name, last_name, password, username]):
         return jsonify({'error': 'Missing required parameters'}), 400
 
+    existing_user = Users.query.filter_by(username=username).first()
+    if existing_user:
+        return jsonify({'error': 'Username already exists'}), 400
+
     try:
         role_enum = Roles(role)
     except ValueError:
@@ -84,7 +88,8 @@ def user_id():
     if username == None:
         return jsonify({"message": "Username is required"}), 400
     
-    user = Users.query.get(username = username).first()
+     
+    user = Users.query.filter_by(username=username).first()
 
     if user is None:
         return jsonify({"error": "User not found"}), 404
@@ -121,6 +126,9 @@ def update_user_info():
     if 'password' in data:
         user.password = data['password']
     if 'username' in data:
+        existing_user = Users.query.filter_by(username=username).first()
+        if existing_user:
+            return jsonify({'error': 'Username already exists'}), 400
         user.username = data['username']
     if 'role' in data:
         try:
@@ -144,7 +152,16 @@ def delete_user(user_id):
     return jsonify({'message': 'User deleted successfully'}), 200
 
 ###Order routes###
-
+#route to get all active orders
+@api.route('/orders/active', methods=['GET'])
+def get_active_orders():
+    try:
+        active_orders = Orders.query.filter(Orders.order_status.in_([OrderStatus.Processing, OrderStatus.Making])).all()
+        active_orders_list = [order.to_dict() for order in active_orders]
+        return jsonify(active_orders_list), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    
 # Route to get all orders for a specific user
 @api.route('/users/<int:user_id>/orders', methods=['GET'])
 def get_user_orders(user_id):
@@ -253,6 +270,54 @@ def delete_order():
  Menu routes
 
 '''
+# Route to test menu items 
+@api.route('/test_menuitems', methods=['POST'])
+def create_test_menu_items():
+    test_menu_items = [
+        {
+            'name': 'Latte',
+            'description': 'A delicious coffee drink',
+            'price': 4.50,
+            'orderable': True
+        },
+        {
+            'name': 'Espresso',
+            'description': 'Strong and bold coffee',
+            'price': 3.00,
+            'orderable': True
+        },
+        {
+            'name': 'Cappuccino',
+            'description': 'Coffee with steamed milk foam',
+            'price': 4.00,
+            'orderable': True
+        },
+        {
+            'name': 'Americano',
+            'description': 'Espresso with hot water',
+            'price': 3.50,
+            'orderable': True
+        },
+        {
+            'name': 'Mocha',
+            'description': 'Coffee with chocolate',
+            'price': 4.75,
+            'orderable': True
+        },
+    ]
+
+    for item in test_menu_items:
+        new_item = MenuItems(
+            name=item['name'],
+            description=item['description'],
+            price=item['price'],
+            orderable=item['orderable']
+        )
+        db.session.add(new_item)
+
+    db.session.commit()
+    return jsonify({'message': 'Test menu items created successfully'}), 201
+
 # Route to get all menu items
 @api.route('/menu_items', methods=['GET'])
 def get_menu_items():
