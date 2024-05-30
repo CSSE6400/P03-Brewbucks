@@ -1,6 +1,7 @@
 # How to run web application
 - Install Node.JS
 - run 'npm install' in terminal
+- run 'npm install axios' in terminal
 - run 'npm run dev' in terminal
 
 # Install daisy ui for component library

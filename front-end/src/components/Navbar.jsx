@@ -2,8 +2,9 @@ import AvatarMenu from "./AvatarMenu";
 import { Navigate, useNavigate } from "react-router-dom";
 import Button from "./Button";
 
-const Navbar = () => {
+const Navbar = ({user}) => {
     let navigate = useNavigate();
+
     const homeRoute = () => {
         let path = '/home';
         navigate(path);
@@ -25,7 +26,7 @@ const Navbar = () => {
                         <Button click={ordersRoute} text={"Orders"} width={"100%"}></Button>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <AvatarMenu points={99999}></AvatarMenu>
+                        <AvatarMenu username={user}points={99999}></AvatarMenu>
                         
                     </div>
                 </div>
