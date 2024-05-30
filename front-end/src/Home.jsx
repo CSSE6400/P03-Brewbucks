@@ -8,7 +8,6 @@ import axios from 'axios'
 
 const Home = () => {
     const [menu, setMenu] = useState([])
-    const [error, setError] = useState(false)
     const [userId, setUserId] = useState()
 
     const location = useLocation()
@@ -31,7 +30,6 @@ const Home = () => {
                 const res = await axios.get('http://127.0.0.1:8080/api/v1/menu_items')
                 setMenu(res.data)
             } catch (error) {
-                setError(true)
             }
         }
 
@@ -41,7 +39,7 @@ const Home = () => {
 
     return (
         <div className="custom-background">
-            <Navbar user={username} ></Navbar>
+            <Navbar user={username}></Navbar>
             <div className="p-4">
                 <div className="flex space-x-8 pt-4 pb-4 pr-10 pl-10">
                     <div className="w-3/4">

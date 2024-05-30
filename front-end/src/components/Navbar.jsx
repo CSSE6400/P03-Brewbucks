@@ -1,6 +1,7 @@
 import AvatarMenu from "./AvatarMenu";
 import { Navigate, useNavigate } from "react-router-dom";
 import Button from "./Button";
+import axios from 'axios'
 
 const Navbar = ({user}) => {
     let navigate = useNavigate();
