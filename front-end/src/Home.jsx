@@ -15,6 +15,17 @@ const Home = (props) => {
     const user = location.state.username
     
     useEffect(() => {
+
+        const fetchUserId = async () => {
+            try {
+                const res = await axios.post("http://127.0.0.1:8080/api/v1/users/user_id", {
+                username: user,
+            });
+            setUserId(res.data.user_id)
+            } catch (error) {
+            }
+        }
+
         const fetchMenu = async () => {
             try {
                 const res = await axios.get('http://127.0.0.1:8080/api/v1/menu_items')
@@ -24,6 +35,7 @@ const Home = (props) => {
             }
         }
 
+        fetchUserId();
         fetchMenu();
     }, []);
 
