@@ -156,6 +156,9 @@ Request Body:
     "role": "Admin"
 }
 Order Routes
+0. route to get all finished orders
+@api.route('/orders/finished', methods=['GET'])
+
 1. show all active orders
 GET /api/v1/users/active
 

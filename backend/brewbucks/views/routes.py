@@ -161,7 +161,17 @@ def get_active_orders():
         return jsonify(active_orders_list), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-    
+
+#route to get all finished orders
+@api.route('/orders/finished', methods=['GET'])
+def get_finished_orders():
+    try:
+        finished_orders = Orders.query.filter(Orders.order_status.in_([OrderStatus.Completed])).all()
+        finished_orders_list = [order.to_dict() for order in finished_orders]
+        return jsonify(finished_orders_list), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 # Route to get all orders for a specific user
 @api.route('/users/<int:user_id>/orders', methods=['GET'])
 def get_user_orders(user_id):
