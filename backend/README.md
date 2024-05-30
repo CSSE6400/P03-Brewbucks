@@ -148,7 +148,6 @@ Request Body:
 PUT /api/v1/users
 Request Body:
 {
-    "user_id": 1,
     "first_name": "Jane",
     "last_name": "Doe",
     "password": "newpassword",
