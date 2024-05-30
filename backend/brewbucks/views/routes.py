@@ -283,7 +283,7 @@ def create_menu_item():
     if not all([user_id,name, description, price is not None]):
         return jsonify({'error': 'Missing required parameters'}), 400
     
-    user = Users.query.get(user_id = user_id, role = "employee")
+    user = Users.query.filter_by(user_id = user_id, role = "employee")
     if user is None:
         return jsonify({'error': 'User access denied'}), 404
     
