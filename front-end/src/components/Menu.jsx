@@ -1,6 +1,5 @@
 import Coffee from "./Coffee.jsx"
 import Store from "./Store.jsx"
-import {PRODUCTS} from "../products.js"
 import {ShopContext} from "../context/ShopContext.jsx"
 import {useContext} from "react"
 
