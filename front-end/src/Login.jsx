@@ -4,6 +4,8 @@ import Button from "./components/Button";
 import Logo from "./images/logo.png";
 import './styles.css'
 import axios from 'axios'
+import { BASE_URL } from './config';
+
 
 const Login = () => {
     const [showSignUp, setShowSignUp] = useState(false);
@@ -27,7 +29,7 @@ const Login = () => {
 
     const signup = async () => {
         try {
-            const res = await axios.post("http://127.0.0.1:8080/api/v1/users", {
+            const res = await axios.post(`${BASE_URL}/api/v1/users`, {
                 first_name: firstname,
                 last_name: lastname,
                 username: username,
@@ -41,7 +43,7 @@ const Login = () => {
 
     const login = async () => {
         try {
-            const res = await axios.post("http://127.0.0.1:8080/api/v1/users/login", {
+            const res = await axios.post(`${BASE_URL}/api/v1/users/login`, {
                 username: username,
                 password: password
             });
@@ -70,7 +72,7 @@ const Login = () => {
                             <input className="input input-bordered input-sm w-full max-w-md" value={firstname} placeholder={"First Name"} onChange={(e) => setFirstname(e.target.value)}></input>
                             <input className="input input-bordered input-sm w-full max-w-md" value={lastname} placeholder={"Last Name"} onChange={(e) => setLastname(e.target.value)}></input>
                             <input className="input input-bordered input-sm w-full max-w-md" value={username} placeholder={"Username"} onChange={(e) => setUsername(e.target.value)}></input>
-                            <input className="input input-bordered input-sm w-full max-w-md" value={password} placeholder={"Password"} onChange={(e) => setPassword(e.target.value)}></input>
+                            <input type="password" className="input input-bordered input-sm w-full max-w-md" value={password} placeholder={"Password"} onChange={(e) => setPassword(e.target.value)}></input>
                         </div>
                         <div className="space-y-2 w-full">
                             <Button click={signup} text={"Sign Up"} width={"100%"}></Button>
@@ -91,7 +93,7 @@ const Login = () => {
                         }
                         <div className="space-y-2 w-full">
                             <input className="input input-bordered input-sm w-full max-w-md" value={username} placeholder={"Username"} onChange={(e) => setUsername(e.target.value)}></input>
-                            <input className="input input-bordered input-sm w-full max-w-md" value={password} placeholder={"Password"} onChange={(e) => setPassword(e.target.value)}></input>
+                            <input type="password" className="input input-bordered input-sm w-full max-w-md" value={password} placeholder={"Password"} onChange={(e) => setPassword(e.target.value)}></input>
                         </div>
                         <div className="space-y-2 w-full">
                             <Button click={login} text={"Login"} width={"100%"}></Button>
