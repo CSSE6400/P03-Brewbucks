@@ -7,7 +7,7 @@ In the context of delivering a simple, coffee ordering website, with tight time 
 #### Context
 * Brewbucks quality attributes are better supported by event-driven architecture: scalability, reliability, interoperability, modularity
 * Event-driven architecture is more complex to implement, e.g, need to add queue, learn libraries to implement event broker and/or a DSL we've not familar with
-* Service based architecture can be improved to support the QAs (i.e., multiple instances for availability, stateless service pattern for scalability)
+* Service based architecture can be improved to support the QAs (i.e., multiple instances for availability (and somewhat scalability), stateless service pattern for reliability)
 * Development team prefers to not implement a queue
 * Brief recommends a service-based architecture
 * Time constraints make it difficult to change architecture unless there's significant advantages
