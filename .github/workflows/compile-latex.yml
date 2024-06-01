@@ -1,0 +1,36 @@
+name: Compile LaTeX Document
+
+on:
+  push:
+    paths:
+      - '**.tex'  # Trigger the workflow only when .tex files are pushed.
+
+jobs:
+  build_pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
+    - name: Set up TeX Live
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: report/report.tex
+
+    - name: Compile LaTeX Document
+      run: latexmk -pdf -outdir=./output report/report.tex
+
+    - name: Upload PDF to Repository
+      uses: actions/upload-artifact@v3
+      with:
+        name: report-pdf
+        path: report/report.pdf
+
+    - name: Commit PDF to Repository
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git add report/report.pdf
+        git commit -m "Automatic compile tex to pdf"
+        git push
