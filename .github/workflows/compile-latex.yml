@@ -3,23 +3,20 @@ name: Compile LaTeX Document
 on:
   push:
     paths:
-      - '**.tex'  # Trigger the workflow only when .tex files are pushed.
+      - '**.tex'
 
 jobs:
   build_pdf:
     runs-on: ubuntu-latest
+    container: 
+      image: dxjoke/tectonic-docker  # Docker image with LaTeX
 
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v3
 
-    - name: Set up TeX Live
-      uses: xu-cheng/latex-action@v2
-      with:
-        root_file: report/report.tex
-
     - name: Compile LaTeX Document
-      run: latexmk -pdf -outdir=./output report/report.tex
+      run: latexmk -pdf report/report.tex
 
     - name: Upload PDF to Repository
       uses: actions/upload-artifact@v3
@@ -32,5 +29,5 @@ jobs:
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
         git add report/report.pdf
-        git commit -m "Automatic compile tex to pdf"
+        git commit -m "Automatically compiling .tex report to pdf"
         git push
