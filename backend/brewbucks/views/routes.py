@@ -198,21 +198,22 @@ def create_user_order():
     order_status = data.get('order_status', OrderStatus.Processing)  # Defaults to processing
     rewards_added = data.get('rewards_added', 0)  # Defaults to 0 points
 
-    if (total,user_id) is None:
-        return jsonify({'error': 'Missing required parameter: total'}), 400
+    if total is None or user_id is None:
+        return jsonify({'error': 'Missing required parameter: total or user_id'}), 400
+
     
     user = Users.query.get(user_id)
     if user is None:
         return jsonify({'error': 'User not found'}), 404
 
     try:
-        payment_status_enum = PaymentStatus(payment_status)
-    except ValueError:
+        payment_status_enum = PaymentStatus[payment_status]
+    except KeyError:
         return jsonify({'error': 'Invalid payment status provided'}), 400
 
     try:
-        order_status_enum = OrderStatus(order_status)
-    except ValueError:
+        order_status_enum = OrderStatus[order_status]
+    except KeyError:
         return jsonify({'error': 'Invalid order status provided'}), 400
 
     new_order = Orders(user_id=user_id, total=total, payment_status=payment_status_enum, order_status=order_status_enum, rewards_added=rewards_added)
@@ -357,8 +358,9 @@ def create_menu_item():
 
     if not all([user_id,name, description, price is not None]):
         return jsonify({'error': 'Missing required parameters'}), 400
-    
-    user = Users.query.filter_by(user_id = user_id, role = "employee")
+
+    user = Users.query.filter_by(user_id=user_id, role=Roles.Employee).first()
+
     if user is None:
         return jsonify({'error': 'User access denied'}), 404
     
@@ -426,7 +428,7 @@ def update_menu_item(item_id):
     if not all([user_id is not None]):
         return jsonify({'error': 'Missing required parameter : user_id'}), 400
     
-    user = Users.query.get(user_id = user_id,role = "employee")
+    user = Users.query.filter_by(user_id=user_id, role=Roles.Employee).first()
     if user is None:
         return jsonify({'error':'User access denied'}),400
     
