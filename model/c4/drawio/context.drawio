@@ -1,6 +1,6 @@
-<mxfile modified="2024-05-09T14:18:26.890Z" host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="AAshcFZtzMrTckY5fWLg" version="24.3.1" type="device">
+<mxfile modified="2024-06-01T07:15:50.067Z" host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="kdaapeUkBzNvuvJCJ6n_" version="24.4.13" type="device">
   <diagram id="UJlyGFXVCkptwmDJzh81" name="Page-1">
-    <mxGraphModel dx="867" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="683" dy="394" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
       <root>
         <object label="" id="0">
           <mxCell />
@@ -8,10 +8,10 @@
         <mxCell id="1" parent="0" />
         <object label="" placeholders="1" instruction="edit data of the lower shape within the group" id="5cVvOpawmlWqnZKX2nME-7">
           <mxCell style="group;resizable=0;rotatable=0;allowArrows=0;" parent="1" vertex="1" connectable="0">
-            <mxGeometry x="30" y="30" width="160" height="170" as="geometry" />
+            <mxGeometry x="20" y="30" width="160" height="170" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal&quot;&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal&quot;&gt;&lt;font style=&quot;font-size: 8px&quot;&gt;[Person]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal ; font-size: 8px&quot;&gt;&lt;span style=&quot;font-size: x-small&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal&quot;&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" name="Customer" description="Someone who orders at Brewbucks Coffee" placeholders="1" id="5cVvOpawmlWqnZKX2nME-5">
+        <object label="&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal&quot;&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal&quot;&gt;&lt;font style=&quot;font-size: 8px&quot;&gt;[Person]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal ; font-size: 8px&quot;&gt;&lt;span style=&quot;font-size: x-small&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal&quot;&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" name="Customer" description="Someone who orders at Brewbucks Coffee." placeholders="1" id="5cVvOpawmlWqnZKX2nME-5">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#00315C;fillColor=#004179;fontColor=#000000;arcSize=31;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="5cVvOpawmlWqnZKX2nME-7" vertex="1">
             <mxGeometry y="70" width="160" height="100" as="geometry" />
           </mxCell>
@@ -21,17 +21,17 @@
         </mxCell>
         <object label="&lt;font style=&quot;font-size: 10px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;br style=&quot;font-size: 10px&quot;&gt;[Software System]&lt;/font&gt;" placeholders="1" name="Brewbucks Coffee" id="5cVvOpawmlWqnZKX2nME-8">
           <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#828282;fontColor=#404040;align=left;labelPosition=center;verticalLabelPosition=middle;verticalAlign=bottom;strokeWidth=2;perimeterSpacing=0;spacing=4;spacingTop=0;fontSize=10;fillColor=none;dashed=1;rotatable=0;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
-            <mxGeometry x="260" y="40" width="380" height="190" as="geometry" />
+            <mxGeometry x="260" y="40" width="270" height="190" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Software System]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="On-line Store" description="Allow customers to browse food options and to order them." id="ZFZfMnJs7HL2lw4cmxaP-1">
+        <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Software System]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="On-line Store" description="Customer can browse food options and order them." id="ZFZfMnJs7HL2lw4cmxaP-1">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0067BA;fontColor=#FFFFFF;strokeColor=#005DA8;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
-            <mxGeometry x="360" y="75" width="180" height="120" as="geometry" />
+            <mxGeometry x="305" y="75" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
         <mxCell id="ZFZfMnJs7HL2lw4cmxaP-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;" parent="1" source="5cVvOpawmlWqnZKX2nME-5" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="360" y="150" as="targetPoint" />
+            <mxPoint x="300" y="150" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="ZFZfMnJs7HL2lw4cmxaP-11" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Browse and purchase food.&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];imageAspect=1;expand=0;movable=1;recursiveResize=0;whiteSpace=wrap;" parent="ZFZfMnJs7HL2lw4cmxaP-10" vertex="1" connectable="0">
@@ -39,7 +39,7 @@
             <mxPoint x="-38" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="lpP5LccOctXcayexabXZ-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.537;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="5cVvOpawmlWqnZKX2nME-8" target="5cVvOpawmlWqnZKX2nME-8">
+        <mxCell id="lpP5LccOctXcayexabXZ-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.537;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="5cVvOpawmlWqnZKX2nME-8" target="5cVvOpawmlWqnZKX2nME-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
