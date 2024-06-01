@@ -1,79 +1,83 @@
-<mxfile host="app.diagrams.net" modified="2024-05-11T06:01:26.451Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="tuXp4ba7l8T_qzm2ovCi" version="24.4.0" type="device">
+<mxfile host="app.diagrams.net" modified="2024-06-01T02:49:12.825Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="OsZM4R3etTk8NQ_OmDUW" version="24.4.13" type="device">
   <diagram name="Page-1" id="Rh-HeQQqGaOiUNq3bMzJ">
-    <mxGraphModel dx="795" dy="537" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1122" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <object label="&lt;font style=&quot;font-size: 10px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;br style=&quot;font-size: 10px&quot;&gt;[Container]&lt;/font&gt;" placeholders="1" name="Food Purchasing" id="rTCtbeZWByj3moGQfVYb-1">
-          <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#828282;fillColor=none;fontColor=#404040;align=left;labelPosition=center;verticalLabelPosition=middle;verticalAlign=bottom;dashed=1;strokeWidth=2;perimeterSpacing=0;spacing=4;spacingTop=0;fontSize=10;container=0;rotatable=0;metaEdit=1;allowArrows=0;" vertex="1" parent="1">
-            <mxGeometry x="325" y="80" width="555" height="360" as="geometry">
+          <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#828282;fillColor=none;fontColor=#404040;align=left;labelPosition=center;verticalLabelPosition=middle;verticalAlign=bottom;dashed=1;strokeWidth=2;perimeterSpacing=0;spacing=4;spacingTop=0;fontSize=10;container=0;rotatable=0;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
+            <mxGeometry x="270" y="80" width="545" height="360" as="geometry">
               <mxRectangle x="560" y="40" width="110" height="30" as="alternateBounds" />
             </mxGeometry>
           </mxCell>
         </object>
-        <mxCell id="rTCtbeZWByj3moGQfVYb-15" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=12 12;" edge="1" parent="1" source="rTCtbeZWByj3moGQfVYb-2" target="rTCtbeZWByj3moGQfVYb-5">
+        <mxCell id="rTCtbeZWByj3moGQfVYb-15" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=12 12;" parent="1" source="rTCtbeZWByj3moGQfVYb-2" target="rTCtbeZWByj3moGQfVYb-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rTCtbeZWByj3moGQfVYb-16" value="Uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rTCtbeZWByj3moGQfVYb-15">
+        <mxCell id="rTCtbeZWByj3moGQfVYb-16" value="Uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="rTCtbeZWByj3moGQfVYb-15" vertex="1" connectable="0">
           <mxGeometry x="0.149" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rTCtbeZWByj3moGQfVYb-17" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=12 12;" edge="1" parent="1" source="rTCtbeZWByj3moGQfVYb-2" target="rTCtbeZWByj3moGQfVYb-6">
+        <mxCell id="rTCtbeZWByj3moGQfVYb-17" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=12 12;" parent="1" source="rTCtbeZWByj3moGQfVYb-2" target="rTCtbeZWByj3moGQfVYb-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rTCtbeZWByj3moGQfVYb-18" value="Uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="rTCtbeZWByj3moGQfVYb-17">
+        <mxCell id="rTCtbeZWByj3moGQfVYb-18" value="Uses" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="rTCtbeZWByj3moGQfVYb-17" vertex="1" connectable="0">
           <mxGeometry x="-0.0428" y="2" relative="1" as="geometry">
             <mxPoint x="-1" as="offset" />
           </mxGeometry>
         </mxCell>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Component: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Food Purchasing Façade" technology="Flask" description="Provides interface to purchase food." id="rTCtbeZWByj3moGQfVYb-2">
-          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#404040;strokeColor=#6992BD;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" vertex="1" parent="1">
-            <mxGeometry x="340" y="200" width="180" height="120" as="geometry" />
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#404040;strokeColor=#6992BD;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
+            <mxGeometry x="285" y="200" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="rTCtbeZWByj3moGQfVYb-13" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=12 12;" edge="1" parent="1" source="rTCtbeZWByj3moGQfVYb-5" target="rTCtbeZWByj3moGQfVYb-8">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="rTCtbeZWByj3moGQfVYb-13" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=12 12;" parent="1" source="rTCtbeZWByj3moGQfVYb-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="835" y="260" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="rTCtbeZWByj3moGQfVYb-14" value="Set payment as &#39;completed&#39;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" vertex="1" connectable="0" parent="rTCtbeZWByj3moGQfVYb-13">
+        <mxCell id="rTCtbeZWByj3moGQfVYb-14" value="Set payment as &#39;completed&#39;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="rTCtbeZWByj3moGQfVYb-13" vertex="1" connectable="0">
           <mxGeometry x="-0.2122" y="-1" relative="1" as="geometry">
             <mxPoint x="7" as="offset" />
           </mxGeometry>
         </mxCell>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Component: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Process Payment" technology="Python" description="Process the payment transaction using selected payment method." id="rTCtbeZWByj3moGQfVYb-5">
-          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#404040;strokeColor=#6992BD;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" vertex="1" parent="1">
-            <mxGeometry x="600" y="110" width="180" height="120" as="geometry" />
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#404040;strokeColor=#6992BD;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
+            <mxGeometry x="545" y="110" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="rTCtbeZWByj3moGQfVYb-11" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;dashPattern=12 12;" edge="1" parent="1" source="rTCtbeZWByj3moGQfVYb-6" target="rTCtbeZWByj3moGQfVYb-8">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="rTCtbeZWByj3moGQfVYb-11" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;dashPattern=12 12;" parent="1" source="rTCtbeZWByj3moGQfVYb-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="835" y="300.5" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="rTCtbeZWByj3moGQfVYb-12" value="Set order status to &#39;commenced&#39;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" vertex="1" connectable="0" parent="rTCtbeZWByj3moGQfVYb-11">
+        <mxCell id="rTCtbeZWByj3moGQfVYb-12" value="Retrieve customer&#39;s orders" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="rTCtbeZWByj3moGQfVYb-11" vertex="1" connectable="0">
           <mxGeometry x="0.4154" y="1" relative="1" as="geometry">
             <mxPoint x="-53" y="12" as="offset" />
           </mxGeometry>
         </mxCell>
-        <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Component: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Update Order Status" technology="Python" description="Set order status to &#39;commenced&#39; immediately after payment completed." id="rTCtbeZWByj3moGQfVYb-6">
-          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#404040;strokeColor=#6992BD;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" vertex="1" parent="1">
-            <mxGeometry x="600" y="290" width="180" height="120" as="geometry" />
+        <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Component: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="View Orders" technology="Python" description="View active and past orders." id="rTCtbeZWByj3moGQfVYb-6">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#404040;strokeColor=#6992BD;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
+            <mxGeometry x="545" y="290" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="rTCtbeZWByj3moGQfVYb-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="rTCtbeZWByj3moGQfVYb-7" target="rTCtbeZWByj3moGQfVYb-2">
+        <mxCell id="rTCtbeZWByj3moGQfVYb-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;dashPattern=8 8;" parent="1" source="rTCtbeZWByj3moGQfVYb-7" target="rTCtbeZWByj3moGQfVYb-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rTCtbeZWByj3moGQfVYb-10" value="Send Purchase Request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" vertex="1" connectable="0" parent="rTCtbeZWByj3moGQfVYb-9">
+        <mxCell id="rTCtbeZWByj3moGQfVYb-10" value="Send Purchase Request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="rTCtbeZWByj3moGQfVYb-9" vertex="1" connectable="0">
           <mxGeometry x="-0.02" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Web Application" technology="Python, Flask" description="Delivers the web front-end for the on-line store." technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="rTCtbeZWByj3moGQfVYb-7">
-          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3399FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" vertex="1" parent="1">
-            <mxGeometry x="60" y="200" width="180" height="120" as="geometry" />
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3399FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
+            <mxGeometry x="20" y="200" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div&gt;&lt;b style=&quot;font-size: 14px&quot;&gt;%name%&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px&quot;&gt;&lt;font style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 8px&quot;&gt;&lt;font style=&quot;line-height: 9.6px&quot;&gt;%technology-img-tag%&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Application Database" description="Stores customer credentials, foods and orders." technology="AWS RDS PostgreSQL" technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="rTCtbeZWByj3moGQfVYb-8">
-          <mxCell style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;strokeColor=#CCCCCC;strokeWidth=2;fillColor=#66FFB3;fontSize=9;fontColor=#404040;align=center;resizable=0;rotatable=0;verticalAlign=middle;spacing=2;metaEdit=1;allowArrows=0;" vertex="1" parent="1">
-            <mxGeometry x="940" y="200" width="180" height="120" as="geometry" />
+          <mxCell style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;strokeColor=#CCCCCC;strokeWidth=2;fillColor=#66FFB3;fontSize=9;fontColor=#404040;align=center;resizable=0;rotatable=0;verticalAlign=middle;spacing=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
+            <mxGeometry x="840" y="200" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
       </root>
