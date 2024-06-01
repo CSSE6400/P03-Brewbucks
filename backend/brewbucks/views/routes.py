@@ -96,10 +96,10 @@ def user_id():
     return jsonify({"user_id":user.user_id}),200
     
 # Route to get a user by their user ID
-@api.route('/users', methods=['GET'])
-def get_user():
-    data = request.json
-    user_id=data.get("user_id")
+@api.route('/users/<int:user_id>', methods=['GET'])
+def get_user(user_id):
+#     data = request.json
+#     user_id=data.get("user_id")
     user = Users.query.get(user_id)
     if user is None:
         return jsonify({'error': 'User not found'}), 404
@@ -144,10 +144,10 @@ def update_user_info():
     return jsonify(user.to_dict()), 200
 
 # Route to delete a user by their user ID
-@api.route('/users', methods=['DELETE'])
-def delete_user():
-    data = request.json
-    user_id = data.get("user_id")
+@api.route('/users/<int:user_id>', methods=['DELETE'])
+def delete_user(user_id):
+    # data = request.json
+    # user_id = data.get("user_id")
     user = Users.query.get(user_id)
     if user is None:
         return jsonify({'error': 'User not found'}), 404
@@ -226,15 +226,15 @@ def create_user_order():
         return jsonify({'error': 'No input data provided'}), 400
     
     user_id = data.get("user_id")
-
+    
+    user = Users.query.get(user_id)
+    if user is None:
+        return jsonify({'error': 'User not found'}), 404
     order_items = data.get('order_items')  # Expecting a list of items
 
     if user_id is None or not order_items or not isinstance(order_items, list):
         return jsonify({'error': 'Missing required parameters: user_id or order_items'}), 400
     
-    user = Users.query.get(user_id)
-    if user is None:
-        return jsonify({'error': 'User not found'}), 404
 
     payment_status = PaymentStatus.Pending
     order_status = OrderStatus.Making
@@ -546,10 +546,10 @@ def create_menu_item():
     return jsonify(new_item.to_dict()), 201
 
 # Route to update a menu item by its ID
-@api.route('/menu_items', methods=['PUT'])
-def update_menu_item():
-    data= request.json
-    item_id = data.get("item_id")
+@api.route('/menu_items/<int:item_id>', methods=['PUT'])
+def update_menu_item(item_id):
+    # data= request.json
+    # item_id = data.get("item_id")
     item = MenuItems.query.get(item_id)
     if item is None:
         return jsonify({'error': 'Menu item not found'}), 404
