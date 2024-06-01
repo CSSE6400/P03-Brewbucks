@@ -1,13 +1,11 @@
 import CartItem from "./CartItem.jsx";
-import { PRODUCTS } from "../products.js";
-import {ShopContext} from "../context/ShopContext.jsx"
-import {useContext} from "react"
 import { Navigate, useNavigate } from "react-router-dom";
 
 
-const Cart = ({cart, setCart}) => {
-    const {cartItems, removeFromCart, getTotal} = useContext(ShopContext)
-    const totalPrice = getTotal()
+const Cart = ({products, remove}) => {
+    
+    console.log("cart")
+    console.log(products)
 
     let navigate = useNavigate();
     const routeChange = () => {
@@ -24,18 +22,17 @@ const Cart = ({cart, setCart}) => {
             </div>
             <div className="flex-row space-y-0.5 mr-2">
                 {
-                    PRODUCTS.map((product) => {
-                        if (cartItems[product.id] != 0) {
-                            return <CartItem handleClick={() => removeFromCart(product.id)} amount={cartItems[product.id]} type={product.type} price={product.price}></CartItem>
+                    products.map((product) => {
+                            <CartItem type={"hello"} price={"prioe"}></CartItem>
                         }
-                    })
+                    )
                 }
             </div>
 
             <div className="flex-row space-y-2 mr-2 bg-white shadow-sm p-3 rounded-md">
                 <div className="flex p-1 pl-3 pr-3 justify-between">
                     <p className="text-sm">Order Total: </p>
-                    <p className="text-sm font-semibold">${totalPrice}</p>
+                    <p className="text-sm font-semibold">Fetch Price Here</p>
                 </div>
                 <button className="btn btn-sm rounded-md bg-indigo-900 p-2 content-center w-full" onClick={routeChange}>
                     <p className="text-white">
