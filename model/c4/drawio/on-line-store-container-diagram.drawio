@@ -1,6 +1,6 @@
-<mxfile modified="2024-05-11T05:47:43.210Z" host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="_TskP4d32fCd2jNZUOra" version="24.4.0" type="device">
+<mxfile modified="2024-06-01T07:16:02.548Z" host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15" etag="opQFSus-YRt8QZ4J9WOY" version="24.4.13" type="device">
   <diagram id="UJlyGFXVCkptwmDJzh81" name="Page-1">
-    <mxGraphModel dx="954" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
       <root>
         <object label="" id="0">
           <mxCell />
@@ -8,7 +8,7 @@
         <mxCell id="1" parent="0" />
         <object label="" placeholders="1" instruction="edit data of the lower shape within the group" id="5cVvOpawmlWqnZKX2nME-7">
           <mxCell style="group;resizable=0;rotatable=0;allowArrows=0;" parent="1" vertex="1" connectable="0">
-            <mxGeometry x="20" y="290" width="160" height="170" as="geometry" />
+            <mxGeometry x="24" y="980" width="160" height="170" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal&quot;&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal&quot;&gt;&lt;font style=&quot;font-size: 8px&quot;&gt;[Person]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal ; font-size: 8px&quot;&gt;&lt;span style=&quot;font-size: x-small&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal&quot;&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" name="Customer" description="Someone who orders at Brewbucks Coffee" placeholders="1" id="5cVvOpawmlWqnZKX2nME-5">
@@ -21,23 +21,29 @@
         </mxCell>
         <object label="&lt;font style=&quot;font-size: 10px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;br style=&quot;font-size: 10px&quot;&gt;[Software System]&lt;/font&gt;" placeholders="1" name="On-line Store" id="5cVvOpawmlWqnZKX2nME-8">
           <mxCell style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#828282;fontColor=#404040;align=left;labelPosition=center;verticalLabelPosition=middle;verticalAlign=bottom;strokeWidth=2;perimeterSpacing=0;spacing=4;spacingTop=0;fontSize=10;fillColor=none;dashed=1;rotatable=0;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
-            <mxGeometry x="280" y="70" width="830" height="710" as="geometry" />
+            <mxGeometry x="18" y="235.21" width="808.72" height="710" as="geometry" />
           </mxCell>
         </object>
-        <mxCell id="ZFZfMnJs7HL2lw4cmxaP-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" parent="1" source="5cVvOpawmlWqnZKX2nME-5" target="A803iBBg6vPyRcOmnQ50-1" edge="1">
+        <mxCell id="ZFZfMnJs7HL2lw4cmxaP-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;dashPattern=12 12;" parent="1" source="5cVvOpawmlWqnZKX2nME-5" target="A803iBBg6vPyRcOmnQ50-1" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="322.9200000000001" y="414.24" as="targetPoint" />
+            <mxPoint x="316.9200000000001" y="534.24" as="targetPoint" />
+            <mxPoint x="224" y="1050" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="14" y="1075" />
+              <mxPoint x="14" y="580" />
+              <mxPoint x="29" y="580" />
+            </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZFZfMnJs7HL2lw4cmxaP-11" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Browse and purchase food (HTTPS)&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];imageAspect=1;expand=0;movable=1;recursiveResize=0;whiteSpace=wrap;" parent="ZFZfMnJs7HL2lw4cmxaP-10" vertex="1" connectable="0">
+        <mxCell id="ZFZfMnJs7HL2lw4cmxaP-11" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Browse and purchase food [HTTPS]&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];imageAspect=1;expand=0;movable=1;recursiveResize=0;whiteSpace=wrap;" parent="ZFZfMnJs7HL2lw4cmxaP-10" vertex="1" connectable="0">
           <mxGeometry x="-0.0776" relative="1" as="geometry">
-            <mxPoint x="-18" as="offset" />
+            <mxPoint x="10" y="153" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-11" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;exitX=0.996;exitY=0.717;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="A803iBBg6vPyRcOmnQ50-5" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="479.28" y="436.03999999999996" as="sourcePoint" />
-            <mxPoint x="590" y="490" as="targetPoint" />
+            <mxPoint x="208.27999999999994" y="601.25" as="sourcePoint" />
+            <mxPoint x="319.0000000000001" y="655.21" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-12" value="Send Purchase Request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="z5IH9APNfa8hOaEbaLJD-11" vertex="1" connectable="0">
@@ -47,8 +53,8 @@
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-13" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.957;exitY=0.976;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;dashPattern=8 8;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="A803iBBg6vPyRcOmnQ50-6" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="472.26" y="467.12" as="sourcePoint" />
-            <mxPoint x="590" y="680" as="targetPoint" />
+            <mxPoint x="201.25999999999996" y="632.33" as="sourcePoint" />
+            <mxPoint x="319.0000000000001" y="845.21" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-14" value="Find and retrieve food details" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="z5IH9APNfa8hOaEbaLJD-13" vertex="1" connectable="0">
@@ -58,8 +64,8 @@
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-15" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.944;exitY=0.029;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;exitPerimeter=0;" parent="1" target="A803iBBg6vPyRcOmnQ50-2" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="469.9200000000001" y="353.48" as="sourcePoint" />
-            <mxPoint x="590" y="150" as="targetPoint" />
+            <mxPoint x="198.92000000000004" y="518.69" as="sourcePoint" />
+            <mxPoint x="319.0000000000001" y="315.21" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-16" value="Read and update reward points" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="z5IH9APNfa8hOaEbaLJD-15" vertex="1" connectable="0">
@@ -69,7 +75,7 @@
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;" parent="1" target="z5IH9APNfa8hOaEbaLJD-35" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="390" y="470" as="sourcePoint" />
+            <mxPoint x="118.99999999999997" y="635.21" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-46" value="Delivers content to customer&#39;s browser [HTTPS]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="z5IH9APNfa8hOaEbaLJD-45" vertex="1" connectable="0">
@@ -79,17 +85,17 @@
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-21" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;" parent="1" source="A803iBBg6vPyRcOmnQ50-3" target="z5IH9APNfa8hOaEbaLJD-8" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="770" y="320" as="sourcePoint" />
+            <mxPoint x="499.0000000000001" y="485.21" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-22" value="Queries &amp;amp; Updates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="z5IH9APNfa8hOaEbaLJD-21" vertex="1" connectable="0">
           <mxGeometry x="-0.1121" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="27" y="29" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-19" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;" parent="1" source="A803iBBg6vPyRcOmnQ50-5" target="z5IH9APNfa8hOaEbaLJD-8" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="770" y="490" as="sourcePoint" />
+            <mxPoint x="499.0000000000001" y="655.21" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-20" value="Queries &amp;amp; Updates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="z5IH9APNfa8hOaEbaLJD-19" vertex="1" connectable="0">
@@ -99,13 +105,13 @@
         </mxCell>
         <object label="&lt;div&gt;&lt;b style=&quot;font-size: 14px&quot;&gt;%name%&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px&quot;&gt;&lt;font style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 8px&quot;&gt;&lt;font style=&quot;line-height: 9.6px&quot;&gt;%technology-img-tag%&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Application Database" description="Stores customer credentials, foods and orders." technology="AWS RDS PostgreSQL" technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="z5IH9APNfa8hOaEbaLJD-8">
           <mxCell style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;strokeColor=#CCCCCC;strokeWidth=2;fillColor=#66FFB3;fontSize=9;fontColor=#404040;align=center;resizable=0;rotatable=0;verticalAlign=middle;spacing=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
-            <mxGeometry x="900" y="400" width="180" height="120" as="geometry" />
+            <mxGeometry x="627.7200000000001" y="695.21" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-9" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;html=1;" parent="1" target="A803iBBg6vPyRcOmnQ50-3" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="480" y="380" as="sourcePoint" />
-            <mxPoint x="600.0799999999999" y="320" as="targetPoint" />
+            <mxPoint x="208.99999999999997" y="545.21" as="sourcePoint" />
+            <mxPoint x="329.08000000000004" y="485.21" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-10" value="CRUD Customer Account" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="z5IH9APNfa8hOaEbaLJD-9" vertex="1" connectable="0">
@@ -115,7 +121,7 @@
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-17" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.15;entryY=0.95;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;dashPattern=8 8;" parent="1" source="A803iBBg6vPyRcOmnQ50-6" target="z5IH9APNfa8hOaEbaLJD-8" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="770" y="650" as="sourcePoint" />
+            <mxPoint x="499.0000000000001" y="815.21" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-18" value="Find Food" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="z5IH9APNfa8hOaEbaLJD-17" vertex="1" connectable="0">
@@ -125,69 +131,150 @@
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-23" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.15;entryY=0.05;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;dashPattern=8 8;" parent="1" source="A803iBBg6vPyRcOmnQ50-2" target="z5IH9APNfa8hOaEbaLJD-8" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="770" y="180" as="sourcePoint" />
+            <mxPoint x="499.0000000000001" y="345.21" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-24" value="Queries &amp;amp; Updates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="z5IH9APNfa8hOaEbaLJD-23" vertex="1" connectable="0">
           <mxGeometry x="-0.1833" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint x="41" y="91" as="offset" />
           </mxGeometry>
         </mxCell>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Component: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="" technology="" description="" id="z5IH9APNfa8hOaEbaLJD-35">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCE5FF;strokeColor=none;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;fontColor=#ffffff;" parent="1" vertex="1">
-            <mxGeometry x="300" y="585" width="180" height="120" as="geometry" />
+            <mxGeometry x="28.99999999999997" y="750.21" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-36" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#ffffff;strokeColor=none;glass=0;" parent="1" vertex="1">
-          <mxGeometry x="370" y="590" width="100" height="10" as="geometry" />
+          <mxGeometry x="98.99999999999997" y="755.21" width="100" height="10" as="geometry" />
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-37" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#99CCFF;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="350" y="590" width="10" height="10" as="geometry" />
+          <mxGeometry x="78.99999999999997" y="755.21" width="10" height="10" as="geometry" />
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-38" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#99CCFF;strokeColor=none;connectable=0;" parent="1" vertex="1">
-          <mxGeometry x="310" y="590" width="10" height="10" as="geometry" />
+          <mxGeometry x="38.99999999999997" y="755.21" width="10" height="10" as="geometry" />
         </mxCell>
         <mxCell id="z5IH9APNfa8hOaEbaLJD-39" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#99CCFF;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="330" y="590" width="10" height="10" as="geometry" />
+          <mxGeometry x="58.99999999999997" y="755.21" width="10" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="z5IH9APNfa8hOaEbaLJD-43" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;dashed=1;dashPattern=12 12;" parent="1" source="5cVvOpawmlWqnZKX2nME-5" target="z5IH9APNfa8hOaEbaLJD-35" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="z5IH9APNfa8hOaEbaLJD-43" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;dashed=1;dashPattern=12 12;edgeStyle=orthogonalEdgeStyle;entryX=0.888;entryY=1.012;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="184" y="1073.56" as="sourcePoint" />
+            <mxPoint x="188.83999999999992" y="870.2099999999999" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="189" y="1074" />
+              <mxPoint x="189" y="879" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="z5IH9APNfa8hOaEbaLJD-44" value="View food details" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="z5IH9APNfa8hOaEbaLJD-43" vertex="1" connectable="0">
-          <mxGeometry x="-0.1294" relative="1" as="geometry">
-            <mxPoint as="offset" />
+        <mxCell id="EkKdqh3RAuvnkHg07oTS-4" value="View food details" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" vertex="1" connectable="0" parent="z5IH9APNfa8hOaEbaLJD-43">
+          <mxGeometry x="-0.0101" y="3" relative="1" as="geometry">
+            <mxPoint x="2" y="16" as="offset" />
           </mxGeometry>
         </mxCell>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Web Application" technology="Python, Flask" description="Delivers the web front-end for the on-line store." technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="A803iBBg6vPyRcOmnQ50-1">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
-            <mxGeometry x="300" y="354" width="180" height="120" as="geometry" />
+            <mxGeometry x="28.99999999999997" y="519.21" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Reward Point System" technology="Python" description="Provides the backend logic for tracking customer reward points." technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="A803iBBg6vPyRcOmnQ50-2">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
-            <mxGeometry x="600" y="90" width="180" height="120" as="geometry" />
+            <mxGeometry x="320.0000000000001" y="255.21" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Customer Account Management" technology="Python" description="Provides the backend logic for managing accounts." technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="A803iBBg6vPyRcOmnQ50-3">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
-            <mxGeometry x="600" y="260" width="180" height="120" as="geometry" />
+            <mxGeometry x="320.0000000000001" y="425.21" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Food Purchasing" technology="Python" description="Provides the backend logic for ordering food." technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="A803iBBg6vPyRcOmnQ50-5">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
-            <mxGeometry x="600" y="430" width="180" height="120" as="geometry" />
+            <mxGeometry x="323.3600000000001" y="595.21" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
         <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Food Browsing" technology="Python" description="Provides the backend logic for browsing food options." technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="A803iBBg6vPyRcOmnQ50-6">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
-            <mxGeometry x="600" y="620" width="180" height="120" as="geometry" />
+            <mxGeometry x="323.5000000000001" y="785.21" width="180" height="120" as="geometry" />
           </mxCell>
         </object>
-        <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Interactive Web Pages" technology="React &amp; NextJS" description="Provides the environment in which customers can view foods" technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/30/React_Logo_SVG.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="A803iBBg6vPyRcOmnQ50-7">
+        <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Interactive Web Pages" technology="React" description="Provides the environment in which customers can view foods" technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/30/React_Logo_SVG.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="A803iBBg6vPyRcOmnQ50-7">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#404040;strokeColor=none;resizable=1;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
-            <mxGeometry x="308.75" y="610" width="162.5" height="90" as="geometry" />
+            <mxGeometry x="37.74999999999997" y="775.21" width="162.5" height="90" as="geometry" />
           </mxCell>
         </object>
+        <object label="" placeholders="1" instruction="edit data of the lower shape within the group" id="nXoqLvm3HDMlk4ML6V46-1">
+          <mxCell style="group;resizable=0;rotatable=0;allowArrows=0;" parent="1" vertex="1" connectable="0">
+            <mxGeometry x="636.47" y="10" width="160" height="170" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal&quot;&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal&quot;&gt;&lt;font style=&quot;font-size: 8px&quot;&gt;[Person]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal ; font-size: 8px&quot;&gt;&lt;span style=&quot;font-size: x-small&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(255 , 255 , 255) ; white-space: normal&quot;&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" name="Employee" description="Someone who works at the coffee shop." placeholders="1" id="nXoqLvm3HDMlk4ML6V46-2">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#00315C;fillColor=#004179;fontColor=#000000;arcSize=31;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="nXoqLvm3HDMlk4ML6V46-1" vertex="1">
+            <mxGeometry y="70" width="160" height="100" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="nXoqLvm3HDMlk4ML6V46-3" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#00315C;fillColor=#004179;fontColor=#000000;rotatable=0;strokeWidth=2;allowArrows=0;" parent="nXoqLvm3HDMlk4ML6V46-1" vertex="1">
+          <mxGeometry x="40" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="nXoqLvm3HDMlk4ML6V46-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=12 12;" parent="1" source="nXoqLvm3HDMlk4ML6V46-9" target="nXoqLvm3HDMlk4ML6V46-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nXoqLvm3HDMlk4ML6V46-31" value="Retrieve and Update Order Status [REST API / HTTPS]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="nXoqLvm3HDMlk4ML6V46-27" vertex="1" connectable="0">
+          <mxGeometry x="-0.1857" y="2" relative="1" as="geometry">
+            <mxPoint x="29" y="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Component: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="" technology="" description="" id="nXoqLvm3HDMlk4ML6V46-9">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CCE5FF;strokeColor=none;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;fontColor=#ffffff;" parent="1" vertex="1">
+            <mxGeometry x="627.7200000000001" y="255.21" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="nXoqLvm3HDMlk4ML6V46-10" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#ffffff;strokeColor=none;glass=0;" parent="1" vertex="1">
+          <mxGeometry x="698.9700000000001" y="260.21" width="100" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="nXoqLvm3HDMlk4ML6V46-11" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#99CCFF;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="676.4700000000001" y="260.21" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="nXoqLvm3HDMlk4ML6V46-12" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#99CCFF;strokeColor=none;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="656.4700000000001" y="260.21" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="nXoqLvm3HDMlk4ML6V46-13" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#99CCFF;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="636.4700000000001" y="260.21" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="nXoqLvm3HDMlk4ML6V46-18" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=12 12;exitX=0.747;exitY=0.197;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="5cVvOpawmlWqnZKX2nME-8" target="A803iBBg6vPyRcOmnQ50-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="679.0000000000001" y="375.21" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nXoqLvm3HDMlk4ML6V46-19" value="View Order Details [REST API / HTTPS]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="nXoqLvm3HDMlk4ML6V46-18" vertex="1" connectable="0">
+          <mxGeometry x="-0.5762" y="-1" relative="1" as="geometry">
+            <mxPoint x="4" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Admin Application" technology="React" description="Interface to manage orders." technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/30/React_Logo_SVG.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="nXoqLvm3HDMlk4ML6V46-14">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;fontColor=#404040;strokeColor=none;resizable=1;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
+            <mxGeometry x="636.4700000000001" y="275.21" width="162.5" height="90" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="nXoqLvm3HDMlk4ML6V46-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=12 12;" parent="1" source="nXoqLvm3HDMlk4ML6V46-26" target="z5IH9APNfa8hOaEbaLJD-8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nXoqLvm3HDMlk4ML6V46-29" value="Queries &amp;amp; Updates" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=1;points=[];whiteSpace=wrap;" parent="nXoqLvm3HDMlk4ML6V46-28" vertex="1" connectable="0">
+          <mxGeometry x="-0.0519" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <object label="&lt;div&gt;&lt;span style=&quot;font-size: 14px&quot;&gt;&lt;b&gt;%name%&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;[Container: %technology%]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 8px&quot;&gt;%technology-img-tag%&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;1&quot;&gt;%description%&lt;/font&gt;&lt;/div&gt;" placeholders="1" name="Order Management" technology="Python" description="Provides the backend logic for managing orders." technology-img-tag="&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg&quot; width=&quot;24&quot; height=&quot;24&quot;&gt;" id="nXoqLvm3HDMlk4ML6V46-26">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66B2FF;fontColor=#404040;strokeColor=#CCCCCC;resizable=0;rotatable=0;strokeWidth=2;metaEdit=1;allowArrows=0;" parent="1" vertex="1">
+            <mxGeometry x="627.7200000000001" y="490" width="180" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="EkKdqh3RAuvnkHg07oTS-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=12 12;" edge="1" parent="1" source="nXoqLvm3HDMlk4ML6V46-2" target="nXoqLvm3HDMlk4ML6V46-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EkKdqh3RAuvnkHg07oTS-6" value="Manages food details" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="EkKdqh3RAuvnkHg07oTS-5">
+          <mxGeometry x="-0.2857" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
