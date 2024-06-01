@@ -1,17 +1,21 @@
 import AvatarMenu from "./AvatarMenu";
 import { Navigate, useNavigate } from "react-router-dom";
 import Button from "./Button";
+import axios from 'axios'
 
-const Navbar = () => {
+const Navbar = ({user}) => {
     let navigate = useNavigate();
+
+    const username = user
+
     const homeRoute = () => {
         let path = '/home';
-        navigate(path);
+        navigate(path, {state:{username: username}})
     }
 
     const ordersRoute = () => {
         let path = '/orders';
-        navigate(path);
+        navigate(path, {state:{username: username}});
     }
 
 
@@ -25,7 +29,7 @@ const Navbar = () => {
                         <Button click={ordersRoute} text={"Orders"} width={"100%"}></Button>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <AvatarMenu points={99999}></AvatarMenu>
+                        <AvatarMenu username={username}points={99999}></AvatarMenu>
                         
                     </div>
                 </div>
