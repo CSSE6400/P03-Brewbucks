@@ -1,20 +1,49 @@
 import "./styles.css"
 import { Navigate, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import axios from 'axios'
+import { BASE_URL } from './config';
 
 const Purchase = () => {
 
     const location = useLocation()
     const username = location.state.username
-
+    const user_id = location.state.userId
+    const order_id = location.state.order_id
+    
     let navigate = useNavigate();
-    const success = () => {
+    const successRoute = () => {
         let path = '/orders';
-        navigate(path, {state:{username}})
+        navigate(path, {state:{username: username, user_id: user_id}})
     }
-    const fail = () => {
+    const failRoute = () => {
         let path = '/home';
         navigate(path, {state:{username}})
+    }
+    
+    const success = async () => {
+        try {
+            const res = axios.put(`${BASE_URL}/api/v1/users/orders`, {
+                user_id: user_id,
+                order_id: order_id,
+                order_status: 2
+            })
+            successRoute()
+        } catch(error) {
+        }
+    }
+
+    const fail = async () => {
+        try {
+            const res = await axios.put(`${BASE_URL}/api/v1/users/orders`, {
+                user_id: user_id,
+                order_id: order_id,
+                order_status: 4
+
+            })
+            failRoute()
+        } catch(error) {
+        }
     }
 
     return (
@@ -26,12 +55,12 @@ const Purchase = () => {
                     </div>
 
                     <div id="buttons" className="flex justify-center space-x-4">
-                        <button onClick={success} className="btn btn-sm rounded-lg bg-green-600 p-2 content-center w-1/4">
+                        <button onClick={() => success()} className="btn btn-sm rounded-lg bg-green-600 p-2 content-center w-1/4">
                             <p className="text-white font-bold">
                                 Success
                             </p>
                         </button> 
-                        <button onClick={fail} className="btn btn-sm rounded-lg bg-red-600 p-2 content-center w-1/4">
+                        <button onClick={() => fail()} className="btn btn-sm rounded-lg bg-red-600 p-2 content-center w-1/4">
                             <p className="text-white font-bold">
                                 Fail
                             </p>

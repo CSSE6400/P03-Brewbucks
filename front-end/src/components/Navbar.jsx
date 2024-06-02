@@ -1,12 +1,17 @@
+import { useState, useEffect } from 'react'
 import AvatarMenu from "./AvatarMenu";
 import { Navigate, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import axios from 'axios'
+import { BASE_URL } from '../config';
 
-const Navbar = ({user}) => {
+const Navbar = ({user, userId}) => {
+    const [rewardPoints, setRewardPoints] = useState(0)
+
     let navigate = useNavigate();
 
     const username = user
+    const user_id = userId
 
     const homeRoute = () => {
         let path = '/home';
@@ -15,9 +20,23 @@ const Navbar = ({user}) => {
 
     const ordersRoute = () => {
         let path = '/orders';
-        navigate(path, {state:{username: username}});
+        navigate(path, {state:{username: username, user_id: user_id}});
     }
 
+    useEffect(() => {
+
+        const fetchRewardPoints = async () => {
+            try {
+                const res = await axios.get(`${BASE_URL}/api/v1/users/rewards`, {
+                    params: { user_id }
+                });
+                setRewardPoints(res.data["User points"][0])
+            } catch (error) {
+            }
+        }
+
+        fetchRewardPoints();
+    }, []);
 
     return (
         <div className="sticky top-0 z-50 shadow-md bg-white p-3">
@@ -29,7 +48,7 @@ const Navbar = ({user}) => {
                         <Button click={ordersRoute} text={"Orders"} width={"100%"}></Button>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <AvatarMenu username={username}points={99999}></AvatarMenu>
+                        <AvatarMenu username={username}points={rewardPoints}></AvatarMenu>
                         
                     </div>
                 </div>

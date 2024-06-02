@@ -173,8 +173,7 @@ def get_active_orders():
 #route to get all finished orders
 @api.route('/orders/finished', methods=['GET'])
 def get_finished_orders():
-    data = request.json
-    user_id = data.get("user_id")
+    user_id = request.args.get('user_id')
     try:
         finished_orders = Orders.query.filter(Orders.order_status.in_([OrderStatus.Completed]),Orders.user_id==user_id).all()
         finished_orders_list = [order.to_dict() for order in finished_orders]
@@ -185,8 +184,7 @@ def get_finished_orders():
 #route to get all making orders for a user
 @api.route('/orders/making', methods=['GET'])
 def get_making_orders():
-    data = request.json
-    user_id = data.get("user_id")
+    user_id = request.args.get('user_id')
     try:
         making_orders = Orders.query.filter(Orders.order_status.in_([OrderStatus.Making]),Orders.user_id==user_id).all()
         making_orders_list = [order.to_dict() for order in making_orders]
@@ -685,8 +683,7 @@ def delete_order_item(user_id, order_id, order_item_id):
 # Route to get all rewards for a specific user
 @api.route('/users/rewards', methods=['GET'])
 def user_rewards():
-    data = request.json
-    user_id = data.get('user_id')
+    user_id = request.args.get('user_id')
     user = Users.query.get(user_id)
     if user is None:
         return jsonify({'error': 'User not found'}), 404
@@ -770,4 +767,3 @@ def user_rewards():
 #     db.session.add(new_order_item)
 #     db.session.commit()
 #     return jsonify(new_order_item.to_dict()), 201
-
