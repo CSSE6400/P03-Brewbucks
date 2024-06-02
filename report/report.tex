@@ -34,6 +34,12 @@ Describe and justify any changes made to the project from what was outlined in t
 There are items below that correspond to features under the functionality section in the original proposal. The items indicate why simplicity is relevant to the application.
 
 \medskip \begin{minipage}{\dimexpr\textwidth-0.25cm}
+0. Seamless coffee ordering experience
+\begin{itemize}
+    \item General goal for Brewbucks application
+    \item Deliver essential functionality for smooth user experience
+\end{itemize}
+
 1. Extensive Coffee Menu 
 \begin{itemize}
     \item Desire for customers to explore a range of foods with ease
@@ -44,12 +50,6 @@ There are items below that correspond to features under the functionality sectio
 3. Easy Payments
 \begin{itemize}
     \item Feature is regarded as something that is easy to perform or in other words, simple
-\end{itemize}
-
-5. Reward Points and Loyalty Program
-\begin{itemize}
-    \item Customers should view accumulated points with ease
-    \item Raises the need to design navigation, UI and feature interaction to be simple
 \end{itemize}
 \end{minipage}
 
@@ -91,7 +91,7 @@ What architectural design patterns were considered and their pros and cons.
 \subsection{Microservices Architecture}
 \subsubsection*{Pros for System Functionality}
 \begin{itemize}
-    \item Application is suited to independently deployable, loosely coupled, components, e.g., a service for orders, payment, tracking, rewards
+    \item Application is suited to independently deployable, loosely coupled, components, e.g., a service for orders, payment, tracking
     \item Can distribute operations asynchronously using a message broker - helps with taking orders and processing payments concurrently
 \end{itemize}   
 \subsubsection*{Cons for System Functionality}
@@ -117,7 +117,7 @@ What architectural design patterns were considered and their pros and cons.
 \subsection{Brewbucks Architecture Justification}
 \subsubsection*{Pros for System Functionality}
 \begin{itemize}
-    \item Shared database offers data integrity and consistency. It's needed for reliable order tracking, history and rewards
+    \item Shared database offers data integrity and consistency. It's needed for reliable order tracking, history
     \item Food Purchasing service can manage all database transactions for placing an order, e.g., when a food is no longer available, the service can rollback the transaction to guarantee data integrity (supports reliability)
 \end{itemize}
 \subsubsection*{Cons for System Functionality and ASRs}
@@ -152,7 +152,7 @@ Brewbucks software architecture description.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{model//c4//pdf/context.drawio.pdf}
+    \includegraphics[width=0.5\linewidth]{model//c4//pdf/context_drawio.pdf}
     \caption{Context Diagram}
     \label{fig:context}
 \end{figure}
@@ -162,7 +162,7 @@ Brewbucks software architecture description.
 \begin{itemize}
     \item Five distributable services based on app's core functionality (see figure \ref{fig:container})
     \begin{itemize}
-     \item Supports features such as viewing menu items, payments, order history and status, reward point system
+     \item Supports features such as viewing menu items, payments, order history and status
      \item Easily extensible for new features
      \item Domain partitioning offers high-level modularity and deployability
      \item Enables multiple instances of a service using a load balancer for greater availability and some scalability
@@ -188,7 +188,7 @@ Brewbucks software architecture description.
 
 \subsubsection*{Key Observations \ref{fig:container}} 
 \begin{itemize}
-    \item The single database server with logical partitioning of the data satisfies the system in terms of performance. Examples of partitioning include payments and reward-points table
+    \item The single database server with logical partitioning of the data satisfies the system in terms of performance. Examples of partitioning include the payments and order table
     \item A separate user interface was implemented for employee accounts to change a customer's order status
     \item Domain services are not used by external systems, so a reverse proxy was not necessary. Payment service has a simple implementation as opposed to using an external payment provider 
 \end{itemize}
@@ -203,38 +203,32 @@ Brewbucks software architecture description.
 \newgeometry{left=1.5cm,bottom=2.0cm,right=1.5cm,top=2.0cm}
 \begin{figure}
     \centering
-    \includegraphics[width=0.80\linewidth]{model//c4//pdf/on-line-store-container-diagram.drawio.pdf}
+    \includegraphics[width=0.80\linewidth]{model//c4//pdf/on-line-store-container-diagram_drawio.pdf}
     \caption{Container Diagram}
     \label{fig:container}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=1.0\linewidth]{model//c4//pdf/reward_point_system.drawio.pdf}
-    \caption{Reward Point System Component Diagram}
-    \label{fig:rewards}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=1\linewidth]{model//c4//pdf/customer_account_management.drawio.pdf}
+    \includegraphics[width=1\linewidth]{model//c4//pdf/customer_account_management_drawio.pdf}
     \caption{Customer Account Management Component Diagram}
     \label{fig:customer}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{model//c4//pdf/food_purchasing.drawio.pdf}
+    \includegraphics[width=1\linewidth]{model//c4//pdf/food_purchasing_drawio.pdf}
     \caption{Food Purchasing}
     \label{fig:purchase}
 \end{figure}
 \begin{figure}
     \centering
-    \includegraphics[width=1.0\linewidth]{model//c4//pdf/food_browsing.drawio.pdf}
+    \includegraphics[width=1.0\linewidth]{model//c4//pdf/food_browsing_drawio.pdf}
     \caption{Food Browsing Component Diagram}
     \label{fig:browse}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=1.0\linewidth]{model//c4//pdf/order_management.drawio.pdf}
+    \includegraphics[width=1.0\linewidth]{model//c4//pdf/order_management_drawio.pdf}
     \caption{Order Management Component Diagram}
     \label{fig:orders}
 \end{figure}
@@ -247,12 +241,45 @@ Brewbucks software architecture description.
 
 \section{Trade-Offs}
 Describe and justify the trade-offs made in designing the architecture.
+
+\subsubsection*{Tradeoff 1. Shared Database}
+\begin{minipage}{\dimexpr\textwidth-0.25cm}
+\textbf{Problem?} If one service changes its persistent data, then all services that share that data must be changed, as well as the tables storing the data in db
+\hfill \break \textbf{Alternative?} Separate database - offers greater flexibility for scaling (in the face of database performance bottlenecks)
+\hfill \break \textbf{Justification?}
+\begin{itemize}
+    \item Some services don't have enough unique data to make it worth creating a separate database for just the service e.g., Customer Account management only needs to validate username and password fields.
+    \item The most unique data fields in a service is 4 in the menu-items table (see \ref{fig:db})
+    \item For the purposes and scale of this app, it was decided a shared database approach would suffice
+    \item Decision made in the interest of reliability, where data integrity and consistency is preserved
+    \item There is no need to exchange stored data between services, so API is simplified
+    \item An advantage is transaction management - no need to span the transactions over the services
+    \item Drawback? Shared database will increase data coupling and lower testability
+\end{itemize}
+\end{minipage}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{model/db_diagram.png}
+    \caption{Database Design Draft}
+    \label{fig:db}
+\end{figure}
+
 \section{Critique}
 Describe how well the architecture supports delivering the complete system.
 \section{Evaluation}
 Summarise testing results and justify how well the software achieves its quality attributes.
 \section{Reflection}
-Lessons learnt and what you would do differently.
+\subsubsection*{General Reflections on Project}
+
+There were internal decisions within the team that shaped the project delivery. For one, the team underestimated the implementation of a service-based architecture. There were aspects of the implementation that made the process more difficult than anticipated, this included API abstraction and independent services. A better estimation would have led the team to more accurately gauge the project timeline. It also would have helped to implement the missed features discussed below. One decision that proved to be advantageous was opting for Python Flask and not AWS Lambda. AWS Lambda would have offered benefits such as automatic scalability and minimised operational management. However, the team's experience with AWS Lambda was limited to one member. While all others were comfortable with Python Flask. Given the tight timeline for the project, the team feels this was the right decision to ensure an MVP was delivered on time. 
+
+\subsubsection*{Missed Opportunities}
+There were two additional features the team wanted to implement.
+
+\medskip \noindent An API layer for security policies would have established a more secure system. A future iteration of the application would use an external payment provider. To prepare for this, a reverse proxy should have been implemented to hide the internal network structure of the system's architecture. This additional layer of abstraction would have been beneficial to delivering the security principle of least privilege. It would also add the possibility for extensions such as security policies, user access logging or service discovery, in the API layer. Time played a major factor in the decision to omit this security feature. As it stands, the internal network structure would be exposed to a future external service, meaning this could be exploited as a security flaw. 
+
+\medskip \noindent Authentication on the admin page would be beneficial for long term security. This feature ideated by the team. It was not in the proposal. Authentication is important to ensure the user accessing the administrative page is in fact an employee. As it stands, the simple solution for now was to create 2 administrative accounts for the employees to securely access. This will still allow the coffee shop to operate and process orders. However, it would likely prove to be unsustainable in the long run, for a coffee shop attempting to expand operations.
+
 
 \section{References}
 \par \sloppy Coffee School. (2022, July 6). How Many Coffees Can a Barista Make in an Hour? – Coffee School. https://www.coffeeschool.com.au/news/how-many-coffees-can-a-barista-make-in-an-hour
