@@ -14,7 +14,6 @@ const Home = () => {
     const [userId, setUserId] = useState()
     const [addedProducts, setAddedProducts] = useState([]);
     const [orderTotal, setOrderTotal] = useState(0);
-    const [orderError, setOrderError] = useState(false);
 
     const location = useLocation()
     const username = location.state.username
@@ -54,9 +53,9 @@ const Home = () => {
         const fetchUserId = async () => {
             try {
                 const res = await axios.post(`${BASE_URL}/api/v1/users/user_id`, {
-                username: username,
-            });
-            setUserId(res.data.user_id)
+                    username: username,
+                });
+                setUserId(res.data.user_id)
             } catch (error) {
             }
         }
@@ -87,7 +86,6 @@ const Home = () => {
             const order_id = res.data.order.order_id
             paymentRoute(order_id)
         } catch (error) {
-            setOrderError(true)
         }
     }
 

@@ -9,10 +9,7 @@ import { BASE_URL } from "./config";
 
 const Orders = () => {
     const [activeOrders, setActiveOrders] = useState()
-    const [activeOrdersError, setActiveOrdersError] = useState(false)
-
     const [finishedOrders, setFinishedOrders] = useState()
-    const [finishedOrdersError, setFinishedOrdersError] = useState(false)
 
     const location = useLocation()
     const username = location.state.username
@@ -20,24 +17,25 @@ const Orders = () => {
 
     useEffect(() => {
         const fetchActiveOrders = async () => {
+            console.log(user_id)
             try {
-                const res = await axios.get(`${BASE_URL}/api/v1/orders/making`, {
-                    user_id: user_id
-                })
+                const res = await axios.get(`${BASE_URL}/api/v1/orders/making`, { 
+                    user_id: user_id,
+                });
+                console.log(res)
+                setActiveOrders(res.data)
             } catch (error) {
-                setActiveOrdersError(true)
+                console.log(error)
             }
         }
 
         const fetchFinishedOrders = async () => {
             try {
-                const res = await axios.get(`${BASE_URL}/api/v1/orders/finished`,{
-                    user_id: user_id
-                })
-                console.log(res)
+                const res = await axios.get(`${BASE_URL}/api/v1/orders/finished`, {
+                    user_id: user_id,
+                });
+                setFinishedOrders(res.data)
             } catch (error) {
-                console.log(error)
-                setFinishedOrdersError(true)
             }
         }
         

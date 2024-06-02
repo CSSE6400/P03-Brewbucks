@@ -47,7 +47,7 @@ const Admin = () => {
     }, []);
 
     return (
-        <div className="custom-background h-screen p-4 ">
+        <div className="custom-background h-fit p-4 ">
             <div className="flex flex-col space-y-4 pt-4 pb-4 pr-10 pl-10">
                 {
                     makingOrders && makingOrders.map((order) => {
