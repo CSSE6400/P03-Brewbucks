@@ -25,6 +25,12 @@ resource "aws_ecs_task_definition" "brewbucks-frontend" {
        "hostPort": 80 
       } 
     ], 
+    "environment": [ 
+      { 
+       "name": "BASE_URL", 
+       "value": "http://${aws_lb.brewbucks.dns_name}" 
+      } 
+    ],
     "logConfiguration": { 
       "logDriver": "awslogs", 
       "options": { 
