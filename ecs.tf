@@ -3,13 +3,13 @@ resource "aws_ecs_cluster" "brewbucks" {
 }
 
 resource "aws_ecs_task_definition" "brewbucks-frontend" {
-  family = "brewbucks-frontend"
-  network_mode = "awsvpc"
+  family                   = "brewbucks-frontend"
+  network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu = 1024
-  memory = 2048
-  execution_role_arn = data.aws_iam_role.lab.arn
-  depends_on = [docker_image.brewbucks-frontend]
+  cpu                      = 1024
+  memory                   = 2048
+  execution_role_arn       = data.aws_iam_role.lab.arn
+  depends_on               = [docker_image.brewbucks-frontend, aws_lb.brewbucks]
 
   container_definitions = <<DEFINITION
  [ 
@@ -27,8 +27,8 @@ resource "aws_ecs_task_definition" "brewbucks-frontend" {
     ], 
     "environment": [ 
       { 
-       "name": "BASE_URL", 
-       "value": "http://${aws_lb.brewbucks.dns_name}" 
+       "name": "VITE_BASE_URL", 
+       "value": "${aws_lb.brewbucks.dns_name}" 
       } 
     ],
     "logConfiguration": { 
@@ -106,13 +106,13 @@ resource "aws_ecs_service" "brewbucks-frontend" {
     container_name   = "brewbucks-frontend"
     container_port   = 80
   }
-  
+
 }
 
 resource "aws_ecs_service" "brewbucks" {
   name            = "brewbucks"
   cluster         = aws_ecs_cluster.brewbucks.id
-  task_definition = aws_ecs_task_definition.brewbucks.arn  
+  task_definition = aws_ecs_task_definition.brewbucks.arn
   desired_count   = 1
   launch_type     = "FARGATE"
   depends_on      = [aws_ecs_task_definition.brewbucks]
