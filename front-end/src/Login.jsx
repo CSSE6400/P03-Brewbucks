@@ -1,23 +1,57 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "./components/Button";
-import Input from "./components/Input";
 import Logo from "./images/logo.png";
-import './styles.css';
+import './styles.css'
+import axios from 'axios'
+import { BASE_URL } from './config';
 
 
 const Login = () => {
     const [showSignUp, setShowSignUp] = useState(false);
     const navigate = useNavigate();
 
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(false)
+    const [signUpError, setSignUpError] = useState(false)
+
     const homeRoute = () => {
         let path = '/home';
-        navigate(path);
+        navigate(path, {state:{username}})
     };
 
     const toggleForm = () => {
         setShowSignUp(!showSignUp);
+    }
+
+    const signup = async () => {
+        try {
+            const res = await axios.post(`${BASE_URL}/api/v1/users`, {
+                first_name: firstname,
+                last_name: lastname,
+                username: username,
+                password: password
+            });
+            toggleForm()
+        } catch (error) {
+            setSignUpError(true);
+        }
     };
+
+    const login = async () => {
+        try {
+            const res = await axios.post(`${BASE_URL}/api/v1/users/login`, {
+                username: username,
+                password: password
+            });
+            homeRoute();
+        } catch (error) {
+            setError(true);
+        }
+    }
 
     return (
         <div className="h-screen w-screen p-4 flex justify-center items-center custom-background">
@@ -29,14 +63,19 @@ const Login = () => {
                         <div>
                             <p className="text-3xl text-indigo-900 font-bold">SIGN UP</p> 
                         </div>
+                        {
+                            signUpError && <div className="text-xs text-red-500">
+                                <p>Incorrect parameters for sign up</p>
+                            </div>
+                        }
                         <div className="space-y-2 w-full">
-                            <Input placeholder={"First Name"}></Input>
-                            <Input placeholder={"Last Name"}></Input>
-                            <Input placeholder={"Username"}></Input>
-                            <Input placeholder={"Password"}></Input>
+                            <input className="input input-bordered input-sm w-full max-w-md" value={firstname} placeholder={"First Name"} onChange={(e) => setFirstname(e.target.value)}></input>
+                            <input className="input input-bordered input-sm w-full max-w-md" value={lastname} placeholder={"Last Name"} onChange={(e) => setLastname(e.target.value)}></input>
+                            <input className="input input-bordered input-sm w-full max-w-md" value={username} placeholder={"Username"} onChange={(e) => setUsername(e.target.value)}></input>
+                            <input type="password" className="input input-bordered input-sm w-full max-w-md" value={password} placeholder={"Password"} onChange={(e) => setPassword(e.target.value)}></input>
                         </div>
                         <div className="space-y-2 w-full">
-                            <Button click={toggleForm} text={"Sign Up"} width={"100%"}></Button>
+                            <Button click={signup} text={"Sign Up"} width={"100%"}></Button>
                             <div className="text-xs font-semibold flex space-x-1">
                                 <p className="">Already a member?</p><button onClick={toggleForm} className="text-indigo-900">Log In</button>
                             </div>
@@ -47,16 +86,22 @@ const Login = () => {
                         <div>
                             <p className="text-3xl text-indigo-900 font-bold">LOG IN</p> 
                         </div>
+                        {
+                            error && <div className="text-xs text-red-500">
+                                <p>Incorrect username or password</p>
+                            </div>
+                        }
                         <div className="space-y-2 w-full">
-                            <Input placeholder={"Username"}></Input>
-                            <Input placeholder={"Password"}></Input>
+                            <input className="input input-bordered input-sm w-full max-w-md" value={username} placeholder={"Username"} onChange={(e) => setUsername(e.target.value)}></input>
+                            <input type="password" className="input input-bordered input-sm w-full max-w-md" value={password} placeholder={"Password"} onChange={(e) => setPassword(e.target.value)}></input>
                         </div>
                         <div className="space-y-2 w-full">
-                            <Button click={homeRoute} text={"Login"} width={"100%"}></Button>
+                            <Button click={login} text={"Login"} width={"100%"}></Button>
                             <div className="text-xs font-semibold flex space-x-1">
                                 <p className="">Not a member?</p><button onClick={toggleForm} className="text-indigo-900">Sign Up</button>
                             </div>
                         </div>
+
                     </div>
                 )}
                 

@@ -1,11 +1,34 @@
 import OrderDetails from "./components/OrderDetails";
 import Navbar from "./components/Navbar";
 import "./styles.css"
+import { useLocation } from "react-router-dom";
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
-const Orders = ({user}) => {
+const Orders = () => {
+    const [userId, setUserId] = useState()
+
+    const location = useLocation()
+    const username = location.state.username
+
+    useEffect(() => {
+
+        const fetchUserId = async () => {
+            try {
+                const res = await axios.post("http://127.0.0.1:8080/api/v1/users/user_id", {
+                username: username,
+            });
+            setUserId(res.data.user_id)
+            } catch (error) {
+            }
+        }
+
+        fetchUserId();
+    }, []);
+
     return (
         <div>
-            <Navbar></Navbar>
+            <Navbar user={username}></Navbar>
             <div className="custom-background p-4 h-screen">
                 <div className="flex flex-col space-y-4 pt-4 pb-4 pr-10 pl-10">
                     

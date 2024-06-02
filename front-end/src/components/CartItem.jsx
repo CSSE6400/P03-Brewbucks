@@ -7,7 +7,7 @@ const CartItem = ({amount, type, price, handleClick}) => {
                 </button> 
                 <p className="text-sm">{amount} x {type}</p>
             </div>
-            <p className="text-sm font-medium">${price} ea.</p>
+            <p className="text-sm font-medium"> ${price}</p>
         </div>
     )
 }
