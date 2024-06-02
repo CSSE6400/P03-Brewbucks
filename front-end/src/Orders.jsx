@@ -20,7 +20,7 @@ const Orders = () => {
             console.log(user_id)
             try {
                 const res = await axios.get(`${BASE_URL}/api/v1/orders/making`, { 
-                    user_id: user_id,
+                    params: { user_id }
                 });
                 console.log(res)
                 setActiveOrders(res.data)
@@ -32,7 +32,7 @@ const Orders = () => {
         const fetchFinishedOrders = async () => {
             try {
                 const res = await axios.get(`${BASE_URL}/api/v1/orders/finished`, {
-                    user_id: user_id,
+                    params: { user_id }
                 });
                 setFinishedOrders(res.data)
             } catch (error) {
@@ -66,7 +66,7 @@ const Orders = () => {
                             <div className="collapse-title text-xl font-medium">
                                 Past Orders
                             </div>
-                            <div className="collapse-content"> 
+                            <div className="collapse-content space-y-1"> 
                                 {
                                     finishedOrders && finishedOrders.map((order) => {
                                         return <OrderDetails orderId={order.order_id} orderTime={order.created_at} orderStatus={order.order_status}></OrderDetails>

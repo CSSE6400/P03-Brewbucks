@@ -28,9 +28,9 @@ const Navbar = ({user, userId}) => {
         const fetchRewardPoints = async () => {
             try {
                 const res = await axios.get(`${BASE_URL}/api/v1/users/rewards`, {
-                    "user_id": user_id,
+                    params: { user_id }
                 });
-                console.log(res)
+                setRewardPoints(res.data["User points"][0])
             } catch (error) {
             }
         }
