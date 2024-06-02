@@ -4,26 +4,45 @@ import "./styles.css"
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { BASE_URL } from "./config";
+
 
 const Orders = () => {
-    const [userId, setUserId] = useState()
+    const [activeOrders, setActiveOrders] = useState()
+    const [activeOrdersError, setActiveOrdersError] = useState(false)
+
+    const [finishedOrders, setFinishedOrders] = useState()
+    const [finishedOrdersError, setFinishedOrdersError] = useState(false)
 
     const location = useLocation()
     const username = location.state.username
+    const user_id = location.state.user_id
 
     useEffect(() => {
-
-        const fetchUserId = async () => {
+        const fetchActiveOrders = async () => {
             try {
-                const res = await axios.post("http://127.0.0.1:8080/api/v1/users/user_id", {
-                username: username,
-            });
-            setUserId(res.data.user_id)
+                const res = await axios.get(`${BASE_URL}/api/v1/orders/making`, {
+                    user_id: user_id
+                })
             } catch (error) {
+                setActiveOrdersError(true)
             }
         }
 
-        fetchUserId();
+        const fetchFinishedOrders = async () => {
+            try {
+                const res = await axios.get(`${BASE_URL}/api/v1/orders/finished`,{
+                    user_id: user_id
+                })
+                console.log(res)
+            } catch (error) {
+                console.log(error)
+                setFinishedOrdersError(true)
+            }
+        }
+        
+        fetchActiveOrders();
+        fetchFinishedOrders();
     }, []);
 
     return (

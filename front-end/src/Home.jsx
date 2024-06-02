@@ -12,9 +12,9 @@ import { BASE_URL } from './config';
 const Home = () => {
     const [menu, setMenu] = useState([])
     const [userId, setUserId] = useState()
-
     const [addedProducts, setAddedProducts] = useState([]);
     const [orderTotal, setOrderTotal] = useState(0);
+    const [orderError, setOrderError] = useState(false);
 
     const location = useLocation()
     const username = location.state.username
@@ -49,12 +49,6 @@ const Home = () => {
         });
     };
     
-    let navigate = useNavigate();
-    const paymentRoute= () => {
-        let path = '/purchase';
-        navigate(path, {state:{username}})
-    }
-
     useEffect(() => {
 
         const fetchUserId = async () => {
@@ -84,11 +78,31 @@ const Home = () => {
         setOrderTotal(total);
     }, [addedProducts]);
 
+    const makeOrder = async () => {
+        try {
+            const res = await axios.post(`${BASE_URL}/api/v1/users/orders`, {
+                user_id: userId,
+                order_items: addedProducts
+            })
+            const order_id = res.data.order.order_id
+            paymentRoute(order_id)
+        } catch (error) {
+            setOrderError(true)
+        }
+    }
+
+    let navigate = useNavigate();
+    const paymentRoute= (order_id) => {
+        let path = '/purchase';
+        navigate(path, {state:{username: username, userId: userId, order_id: order_id}})
+    }
+
+
     console.log(addedProducts)
 
     return (
         <div className="custom-background">
-            <Navbar user={username}></Navbar>
+            <Navbar user={username} userId={userId}></Navbar>
             <div className="p-4">
                 <div className="flex space-x-8 pt-4 pb-4 pr-10 pl-10">
                     <div className="w-3/4">
@@ -121,7 +135,7 @@ const Home = () => {
                                     <p className="text-sm">Order Total: </p>
                                     <p className="text-sm font-semibold">${orderTotal.toFixed(2)}</p>
                                 </div>
-                                <button className="btn btn-sm rounded-md bg-indigo-900 p-2 content-center w-full" onClick={paymentRoute}>
+                                <button className="btn btn-sm rounded-md bg-indigo-900 p-2 content-center w-full" onClick={() => makeOrder()}>
                                     <p className="text-white">
                                         Checkout
                                     </p>
