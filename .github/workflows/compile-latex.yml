@@ -34,3 +34,4 @@ jobs:
         git add report/report.pdf
         git commit -m "Automatically compiling .tex report to pdf"
         git push
+      working-directory: ${{ github.workspace }}
