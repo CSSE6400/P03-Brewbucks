@@ -9,7 +9,7 @@ jobs:
   build_pdf:
     runs-on: ubuntu-latest
     container: 
-      image: dxjoke/tectonic-docker  # Docker image with LaTeX
+      image: blang/latex:ctanfull  # Docker image with LaTeX
 
     steps:
     - name: Checkout Repo
