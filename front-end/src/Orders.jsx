@@ -54,8 +54,11 @@ const Orders = () => {
                                 Active Orders
                             </div>
                             <div className="collapse-content space-y-1"> 
-                                <OrderDetails orderId={"12343134"} orderTime={"14:34, 18/05/2025"} orderPrice={"$15"} orderInfo={"1 Latte, 1 Mocha"} orderStatus={"Order Recieved"}></OrderDetails>
-                                <OrderDetails orderTime={"14:34, 18/05/2025"} orderPrice={"$15"} orderInfo={"1 Latte, 1 Mocha"} orderStatus={"Order Recieved"}></OrderDetails>
+                                {
+                                    activeOrders && activeOrders.map((order) => {
+                                        return <OrderDetails orderId={order.order_id} orderTime={order.created_at} orderStatus={order.order_status}></OrderDetails>
+                                    })
+                                }
                             </div>
                         </div>
 
@@ -64,10 +67,13 @@ const Orders = () => {
                                 Past Orders
                             </div>
                             <div className="collapse-content"> 
-                                <OrderDetails orderTime={"12:30, 17/05/2025"} orderPrice={"$7.40"} orderInfo={"1 Latte"} orderStatus={"Finished"}></OrderDetails>
+                                {
+                                    finishedOrders && finishedOrders.map((order) => {
+                                        return <OrderDetails orderId={order.order_id} orderTime={order.created_at} orderStatus={order.order_status}></OrderDetails>
+                                    })
+                                }
                             </div>
                         </div>
-
                 </div>
             </div>
         </div>
