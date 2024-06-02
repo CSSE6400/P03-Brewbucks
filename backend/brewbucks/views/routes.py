@@ -564,7 +564,7 @@ def update_menu_item(item_id):
     if not all([user_id is not None]):
         return jsonify({'error': 'Missing required parameter : user_id'}), 400
     
-    user = Users.query.get(user_id = user_id,role = "employee")
+    user = Users.query.filter_by(user_id = user_id,role = "employee")
     if user is None:
         return jsonify({'error':'User access denied'}),400
     
