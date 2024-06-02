@@ -41,6 +41,11 @@ provider "aws" {
   }
 }
 
+resource "local_file" "url" {
+  content = "http://${aws_lb.brewbucks-frontend.dns_name}"
+  filename = "url.txt"
+}
+
 data "aws_iam_role" "lab" {
   name = "LabRole"
 }
