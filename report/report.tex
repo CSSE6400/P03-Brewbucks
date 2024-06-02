@@ -26,7 +26,8 @@
 \pagebreak
 
 \section{Abstract}
-Summarise the key points of your document.
+The original proposal can be found \href{https://csse6400.github.io/project-proposal-2024/s4780791/proposal.html}{here}.
+
 \section{Changes}
 Describe and justify any changes made to the project from what was outlined in the proposal.
 
@@ -55,7 +56,27 @@ There are items below that correspond to features under the functionality sectio
 
 \bigskip \noindent The features above reflect the need for simplicity in the application. However, there currently isn't a quality attribute to bring this to the forefront of a developer's attention. Consequently, it is likely to be overlooked through the project's implementation. The team decided to approach this problem by establishing simplicity as a quality attribute. Ideally, this will encourage simple solutions to problems encountered when developing Brewbucks, just as the author implies. This goes for the architecture, features and UI. This feels justified given the proposal's author has emphasised the need for customers to engage with the platform with ease. Therefore, simplicity can be regarded as an obvious, yet neglected quality attribute. 
 
+\subsubsection*{2. Removal of Customizable Ordering}
+\begin{itemize}
+    \item Simplifies user interface and architecture
+    \item Eliminates complications with orders including adjusting espresso shot strength and selecting dairy-free alternatives
+    \item Eliminates the need for a separate database dedicated to posted customizable orders
+    \item Eliminates the need for a separate user interface dedicated to uploaded customizable orders
+    \item Eliminates the need for ingredient configurations on drinks (breakdown of ingredients for drinks would likely result in another database)
+\end{itemize}
 
+\bigskip \noindent This feature is considered by the team to be secondary. The purpose of Brewbucks is to create 'a smooth and hassle-free coffee ordering experience'. Brewbuck's appeal is 'Queue-Free Coffee Ordering at Your Fingertips' as noted in the proposal's title. Therefore, Brewbucks intends to eliminate queues, by facilitating online ordering and payments. Naturally, the user would have a quick and smooth experience if they know when their coffee is ready for collection. This is why the order tracking feature has also been prioritised. Based on the goal statement for Brewbucks, customizable ordering does not appear to be essential to delivering the app's benefits. The rewards from omitting this feature can also be seen in the architecture. The effects described above reflect the simplifications from removing customizable ordering. Bear in mind, simplicity is now an important quality attribute for the application. Aside from this, separating the database would detract from the benefits of a shared database, i.e., data consistency and integrity promotes reliability. Consequently, feature would make more sense in a long term iteration of the application. 
+
+\subsubsection*{3. Removal of Reward Point System}
+\begin{itemize}
+    \item Simplifies payments system by eliminating need for discounting
+    \item Simplifies user experience - adding a feature such as reward points would mean having to explain it to customers, this introduces the need for additional pages
+    \item Simplifies user interfaces - an additional user interface would potentially be added to enable customers to view their accumulated points
+    \item Remove the need for additional logic such as reward floors and ceilings, reward constraints
+    \item Removes additional table from shared database
+\end{itemize}
+
+\bigskip \noindent This feature is also considered secondary by the team. A customer will turn to Brewbucks for online ordering, payments and tracking. A reward point system and loyalty program are common in brick-and-mortar cafes. What this means is that, a customer will not likely expect Brewbucks to have such a feature. The appeal for Brewbucks, to reiterate, is to create'a smooth and hassle-free coffee ordering experience'. Consequently, this feature was not regarded as essential for implementation. The team felt it more important to dedicate the time saved into implementing a system that does well to satisfy the quality attributes. This feature, did not directly contribute to any quality attributes, nor is it an architecturally significant requirement. There are also the benefits gained by simplifying the user experience, see them listed above. This is an important quality attribute to be preserved. A rushed implementation of this feature could emerge as a reliability or security flaw.
 
 \section{Architecture Options}
 What architectural design patterns were considered and their pros and cons.
@@ -265,11 +286,11 @@ Describe and justify the trade-offs made in designing the architecture.
 \end{figure}
 
 \section{Critique}
-\title{Backend Testing Report}
+\subsection{Backend Testing Report}
 
 The backend architecture of our food ordering system has been thoroughly tested to ensure it meets the required functionality and quality attributes. The tests included performance tests, functional tests, and stress tests, with particular focus on critical API endpoints. Below are the detailed results of these tests:
 
-\section{User Sign-Up and Deletion}
+\subsubsection*{User Sign-Up and Deletion}
 
 \begin{itemize}
   \item Total Requests: 7116
@@ -280,7 +301,7 @@ The backend architecture of our food ordering system has been thoroughly tested 
 
 These results demonstrate that the user sign-up and deletion functionality is robust, with all requests completing successfully within an average duration of 10.42 milliseconds. This indicates that the system handles these operations efficiently and reliably.
 
-\section{Get User Info}
+\subsubsection*{Get User Info}
 
 \begin{itemize}
   \item Total Requests: 3605
@@ -291,7 +312,7 @@ These results demonstrate that the user sign-up and deletion functionality is ro
 
 The get user info endpoint also performed exceptionally well, with all requests being successful and an average response time of 6.62 milliseconds. This ensures that user information retrieval is quick and dependable.
 
-\section{Create Menu Item}
+\subsubsection*{Create Menu Item}
 
 \begin{itemize}
   \item Total Requests: 3606
@@ -302,7 +323,7 @@ The get user info endpoint also performed exceptionally well, with all requests 
 
 Creating menu items showed consistent performance with a 100\% success rate and an average request duration of 7.34 milliseconds. This supports the system's ability to manage menu items efficiently.
 
-\section{Get Menu Items}
+\subsubsection*{Get Menu Items}
 
 \begin{itemize}
   \item Total Requests: 1260
@@ -313,8 +334,7 @@ Creating menu items showed consistent performance with a 100\% success rate and 
 
 The get menu items endpoint, while successful in 78.05\% of cases, had a notably higher average request duration of 1.89 seconds. This suggests a potential bottleneck or inefficiency in retrieving menu data, which may need further optimization to improve user experience.
 
-\section{Create Order}
-
+\subsubsection*{Create Order}
 \begin{itemize}
   \item Total Requests: 3584
   \item Successful Requests: 100.00\%
@@ -324,24 +344,19 @@ The get menu items endpoint, while successful in 78.05\% of cases, had a notably
 
 Creating orders was also highly efficient, with a 100\% success rate and an average request duration of 13.4 milliseconds. This indicates that the system is capable of handling order creation swiftly and reliably.
 
-\section{Architecture Suitability}
-
+\subsection{Architecture Suitability}
 The architecture of our system has shown to be well-suited for delivering the required functionality and quality attributes. The following points summarize how the architecture supports key quality attributes:
 
-\subsection{Functionality}
-
+\subsubsection*{Functionality}
 The test results indicate that the system reliably handles user-related operations, menu item management, and order processing. The high success rates and low request durations for most endpoints confirm the functionality is delivered effectively.
 
-\subsection{Performance}
-
+\subsubsection*{Performance}
 Performance metrics such as average request durations and success rates indicate that the system performs well under the tested conditions. The only area of concern is the get menu items endpoint, which may require optimization.
 
-\subsection{Scalability}
-
+\subsubsection*{Scalability}
 The architecture supports scalability, as evidenced by the system's ability to handle thousands of requests with low failure rates. However, further testing under higher loads and varying conditions would provide additional insights into its scalability.
 
-\subsection{Reliability}
-
+\subsubsection*{Reliability}
 With 100\% success rates in most critical operations, the system demonstrates high reliability. This is crucial for maintaining user trust and ensuring consistent service availability.
 
 \section{Evaluation}
