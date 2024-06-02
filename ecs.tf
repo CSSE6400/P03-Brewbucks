@@ -27,7 +27,7 @@ resource "aws_ecs_task_definition" "brewbucks-frontend" {
     ], 
     "environment": [ 
       { 
-       "name": "BASE_URL", 
+       "name": "VITE_BASE_URL", 
        "value": "http://${aws_lb.brewbucks.dns_name}" 
       } 
     ],
