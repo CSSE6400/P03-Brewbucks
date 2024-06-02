@@ -265,7 +265,85 @@ Describe and justify the trade-offs made in designing the architecture.
 \end{figure}
 
 \section{Critique}
-Describe how well the architecture supports delivering the complete system.
+\title{Backend Testing Report}
+
+The backend architecture of our food ordering system has been thoroughly tested to ensure it meets the required functionality and quality attributes. The tests included performance tests, functional tests, and stress tests, with particular focus on critical API endpoints. Below are the detailed results of these tests:
+
+\section{User Sign-Up and Deletion}
+
+\begin{itemize}
+  \item Total Requests: 7116
+  \item Successful Requests: 100.00\%
+  \item Average HTTP Request Duration: 10.42ms
+  \item HTTP Request Failure Rate: 0.00\%
+\end{itemize}
+
+These results demonstrate that the user sign-up and deletion functionality is robust, with all requests completing successfully within an average duration of 10.42 milliseconds. This indicates that the system handles these operations efficiently and reliably.
+
+\section{Get User Info}
+
+\begin{itemize}
+  \item Total Requests: 3605
+  \item Successful Requests: 100.00\%
+  \item Average HTTP Request Duration: 6.62ms
+  \item HTTP Request Failure Rate: 0.00\%
+\end{itemize}
+
+The get user info endpoint also performed exceptionally well, with all requests being successful and an average response time of 6.62 milliseconds. This ensures that user information retrieval is quick and dependable.
+
+\section{Create Menu Item}
+
+\begin{itemize}
+  \item Total Requests: 3606
+  \item Successful Requests: 100.00\%
+  \item Average HTTP Request Duration: 7.34ms
+  \item HTTP Request Failure Rate: 0.00\%
+\end{itemize}
+
+Creating menu items showed consistent performance with a 100\% success rate and an average request duration of 7.34 milliseconds. This supports the system's ability to manage menu items efficiently.
+
+\section{Get Menu Items}
+
+\begin{itemize}
+  \item Total Requests: 1260
+  \item Successful Requests: 78.05\%
+  \item Average HTTP Request Duration: 1.89s
+  \item HTTP Request Failure Rate: 0.00\%
+\end{itemize}
+
+The get menu items endpoint, while successful in 78.05\% of cases, had a notably higher average request duration of 1.89 seconds. This suggests a potential bottleneck or inefficiency in retrieving menu data, which may need further optimization to improve user experience.
+
+\section{Create Order}
+
+\begin{itemize}
+  \item Total Requests: 3584
+  \item Successful Requests: 100.00\%
+  \item Average HTTP Request Duration: 13.4ms
+  \item HTTP Request Failure Rate: 0.00\%
+\end{itemize}
+
+Creating orders was also highly efficient, with a 100\% success rate and an average request duration of 13.4 milliseconds. This indicates that the system is capable of handling order creation swiftly and reliably.
+
+\section{Architecture Suitability}
+
+The architecture of our system has shown to be well-suited for delivering the required functionality and quality attributes. The following points summarize how the architecture supports key quality attributes:
+
+\subsection{Functionality}
+
+The test results indicate that the system reliably handles user-related operations, menu item management, and order processing. The high success rates and low request durations for most endpoints confirm the functionality is delivered effectively.
+
+\subsection{Performance}
+
+Performance metrics such as average request durations and success rates indicate that the system performs well under the tested conditions. The only area of concern is the get menu items endpoint, which may require optimization.
+
+\subsection{Scalability}
+
+The architecture supports scalability, as evidenced by the system's ability to handle thousands of requests with low failure rates. However, further testing under higher loads and varying conditions would provide additional insights into its scalability.
+
+\subsection{Reliability}
+
+With 100\% success rates in most critical operations, the system demonstrates high reliability. This is crucial for maintaining user trust and ensuring consistent service availability.
+
 \section{Evaluation}
 Summarise testing results and justify how well the software achieves its quality attributes.
 \section{Reflection}
