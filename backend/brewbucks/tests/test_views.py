@@ -167,10 +167,10 @@ def test_create_menu(client):
 
 
 def test_create_menu_item(client, sample_user):
-    # 首先创建测试菜单项
+    
     test_create_menu(client)
 
-    # 新的菜单项数据
+    
     item_data = {
         "user_id": sample_user.user_id,
         "name": "Flat White",
@@ -179,7 +179,7 @@ def test_create_menu_item(client, sample_user):
         "orderable": True
     }
     
-    # 创建新的菜单项
+    
     response = client.post("/api/v1/menu_items", json=item_data)
     assert response.status_code == 201
     assert response.json["name"] == item_data["name"]
@@ -187,7 +187,7 @@ def test_create_menu_item(client, sample_user):
     assert response.json["price"] == item_data["price"]
     assert response.json["orderable"] is item_data["orderable"]
 
-    # 验证新的菜单项是否确实被创建
+    
     response = client.get("/api/v1/menu_items")
     assert response.status_code == 200
     menu_items = response.json
@@ -205,15 +205,15 @@ def test_get_menu_items(client):
 
 
 def test_update_menu_item(client, sample_user):
-    # 首先创建测试菜单项
+    
     test_create_menu(client)
 
-    # 获取菜单项，以便获取要更新的项目ID
+   
     response = client.get("/api/v1/menu_items")
     assert response.status_code == 200
     menu_items = response.json
 
-    # 假设要更新 Espresso 项目
+    
     espresso_item = next(item for item in menu_items if item["name"] == "Espresso")
     update_data = {
         "user_id": sample_user.user_id,
@@ -223,7 +223,7 @@ def test_update_menu_item(client, sample_user):
         "orderable": True
     }
 
-    # 进行更新操作
+   
     response = client.put(f"/api/v1/menu_items/{espresso_item['item_id']}", json=update_data)
     assert response.status_code == 200
     assert response.json["name"] == "Updated Espresso"
@@ -231,7 +231,7 @@ def test_update_menu_item(client, sample_user):
     assert response.json["price"] == 3.0
     assert response.json["orderable"] is True
 
-    # 验证项目确实被更新
+    
     response = client.get(f"/api/v1/menu_items/{espresso_item['item_id']}")
     assert response.status_code == 200
     updated_item = response.json
