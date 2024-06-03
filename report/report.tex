@@ -28,6 +28,8 @@
 \section{Abstract}
 The original proposal can be found \href{https://csse6400.github.io/project-proposal-2024/s4780791/proposal.html}{here}.
 
+\medskip \noindent The deployment url can be found in the root directory of the repo, in a file named url.txt.
+
 \section{Changes}
 Describe and justify any changes made to the project from what was outlined in the proposal.
 
@@ -384,7 +386,77 @@ Summary of security considerations in bullet point form below. A more in-depth d
 \medskip \noindent Brewbucks follows additional practices for secure software. Confidentiality design is followed, whereby masking is used for disclosure protection when a user enters their password. Dependency management is also followed. Lock files give the advantage of protecting against dependency injection. It was also intended for the system to log relevant operational information, such as events handled, packets processed and requests satisfied. This is useful for long term security purposes to diagnose breaches or attacks promptly.
 
 \section{Evaluation}
-Summarise testing results and justify how well the software achieves its quality attributes.
+A set of tests were created to evaluate delivery of the functionality and some quality attributes. All of the functionality tests were satisfied and met the proposal's requirements. This demonstrated a degree of support for quality attributes, for example security is supported by role-based access control working as expected. The k6 tests are the ones recommended in the original proposal. These can evaluate scalability, reliability and some availability. A list of the tests are attached below, with a brief summary. For the full testing results, see /k6\_test/result.txt in the root directory of the repo.
+
+\medskip \noindent \textbf{backend/brewbucks/tests/test\_views.py}
+\begin{itemize}
+    \item test\_health()
+    \item test\_create\_user()
+    \item test\_get\_user\_information()
+    \item test\_update\_user\_info()
+    \item test\_delete\_sample\_user()
+    \item test\_delete\_non\_existing\_user()
+    \item test\_user\_login()
+    \item test\_create\_menu\_item()
+    \item test\_get\_menu\_items()
+    \item test\_update\_menu\_item()
+    \item test\_delete\_menu\_item()
+    \item test\_create\_order\_success()
+    \item test\_create\_order\_invalid\_user()
+    \item test\_get\_order\_items()
+    \item test\_update\_order\_item()
+    \item test\_delete\_order\_item()
+    \item test\_get\_active\_orders()
+    \item test\_get\_finished\_orders()
+    \item test\_get\_making\_orders()
+    \item test\_get\_making\_orders\_all()
+    \item test\_create\_and\_get\_rewards()
+\end{itemize}
+
+\medskip \noindent \textbf{/k6 tests}
+create\_menu\_item.js
+\begin{itemize}
+    \item Test creating an item in the menu 
+    \item stages: [
+        { duration: '1m', target: 500 },
+        { duration: '2m', target: 1000 },
+        { duration: '1m', target: 0 },
+    ],
+    \item Ensure the status code is 201
+    \item FAIL item creation status is 201
+    \item 99\% — PASS 2884 / FAIL 20
+\end{itemize}
+
+\medskip \noindent create\_order.js
+\begin{itemize}
+    \item Test creating an order containing 2 items, with quantities of 2 and 1.
+    \item 	stages: [
+        { duration: '2m', target: 1000 }, // Ramp-up to 20 users over 1 minute
+        { duration: '2m', target: 2500 }, // Stay at 20 users for 2 minutes
+        { duration: '2m', target: 0 },  // Ramp-down to 0 users over 1 minute
+    ],
+    \item Ensure order creation status is 201
+    \item FAIL order creation status is 201
+    \item 78\% — PASS 47888 / FAIL 13139
+\end{itemize}
+
+\medskip \noindent  get\_menu\_item.js
+\begin{itemize}
+    \item Test getting all of the menu items
+    \item 	stages: [
+        { duration: '1m', target: 45 },
+        { duration: '2m', target: 75 },
+        { duration: '1m', target: 0 },
+    ],
+    \item Ensure status code is 200
+    \item Ensure response time is < 750ms
+    \item 	FAIL status is 200 99\% — PASS 2596 / FAIL 1
+    \item FAIL response time is < 1000ms 99\% — PASS 2544 / FAIL 52
+\end{itemize}
+
+\medskip \noindent The k6 tests demonstrate scalability, availability and reliability. There were results that suggested the need for improvements to the system, to better handle bottlenecks, this includes get\_menu\_items. For the most part, the results satisfy at a scale, varying loads put on different features. The system does well against large scale ordeer creation, getting user details and create\_menu\_item. This would mean that throughout day to day operations, the system satisfies the scalability and reliability quality attributes. Ideally, future tests should use automated monitoring tools like Nagios or Prometheus, to have complete quality assurance for availability. However, for the MVP stages, the performance of various features proved to be reliable. Note the full set of tests are in /k6\_test
+
+
 \section{Reflection}
 \subsubsection*{General Reflections on Project}
 
