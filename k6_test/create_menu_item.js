@@ -27,7 +27,7 @@ export default function () {
         orderable: true,
     });
 
-    let createItemRes = http.post('http://localhost:8080/api/v1/menu_items', itemData, {
+    let createItemRes = http.post('http://brewbucks-485861802.us-east-1.elb.amazonaws.com/api/v1/menu_items', itemData, {
         headers: { 'Content-Type': 'application/json' },
     });
 

@@ -27,7 +27,7 @@ export default function () {
         role: 'customer',
     });
 
-    let createUserRes = http.post('http://localhost:8080/api/v1/users', userData, {
+    let createUserRes = http.post('http://brewbucks-485861802.us-east-1.elb.amazonaws.com/api/v1/users', userData, {
         headers: { 'Content-Type': 'application/json' },
     });
 
@@ -37,7 +37,7 @@ export default function () {
 
     let userId = createUserRes.json().user_id;
 
-    let deleteUserRes = http.del(`http://localhost:8080/api/v1/users/${userId}`);
+    let deleteUserRes = http.del(`http://brewbucks-485861802.us-east-1.elb.amazonaws.com/api/v1/users/${userId}`);
 
     check(deleteUserRes, {
         'user deletion status is 200': (r) => r.status === 200,
