@@ -3,9 +3,9 @@ import { check, sleep } from 'k6';
 
 export const options = {
     stages: [
-        { duration: '1m', target: 20 }, // Ramp-up to 20 users over 1 minute
-        { duration: '2m', target: 20 }, // Stay at 20 users for 2 minutes
-        { duration: '1m', target: 0 },  // Ramp-down to 0 users over 1 minute
+        { duration: '2m', target: 1000 }, // Ramp-up to 20 users over 1 minute
+        { duration: '2m', target: 2500 }, // Stay at 20 users for 2 minutes
+        { duration: '2m', target: 0 },  // Ramp-down to 0 users over 1 minute
     ],
 };
 
@@ -19,7 +19,7 @@ export default function () {
         rewards_added: 5,
     });
 
-    let createOrderRes = http.post('http://localhost:8080/api/v1/users/orders', orderData, {
+    let createOrderRes = http.post('http://brewbucks-485861802.us-east-1.elb.amazonaws.com/api/v1/users/orders', orderData, {
         headers: { 'Content-Type': 'application/json' },
     });
 

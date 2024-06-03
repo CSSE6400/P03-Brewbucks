@@ -359,6 +359,30 @@ The architecture supports scalability, as evidenced by the system's ability to h
 \subsubsection*{Reliability}
 With 100\% success rates in most critical operations, the system demonstrates high reliability. This is crucial for maintaining user trust and ensuring consistent service availability.
 
+\subsubsection*{Security}
+Summary of security considerations in bullet point form below. A more in-depth discussion is in the paragraph below.
+\begin{itemize}
+    \item Role-based access control in form of employee and customer accounts
+    \item Principle of KISS for user logins and architecture
+        \begin{itemize}
+         \item Architecture has no redundant services, intentionally kept simple
+         \item Omit features where delivery wouldn't be done well, minimising security and design flaws 
+         \end{itemize}
+    \item Principle of least privilege: customer account does basic ordering, employee account can modify menu items and order status
+    \item Dependency management for secure software
+        \begin{itemize}
+         \item Lock files give the benefit of preventing against dependency injection
+        \end{itemize}
+    \item Confidentiality design - masking used for disclosure protection when user enters their password
+    \item Plans for authentication of employee logins, left out due to time
+    \item Plans for monitoring and traceability
+    \item Never store sensitive customer information e.g., payment details
+\end{itemize}
+
+\medskip \noindent The Brewbucks application considers security design principles. Role-based access control has been adopted for users that interact with the application. Two roles have been created to service the users: customer and employee. Employees gain admin privileges by engaging with the administrator's page - a separate user interface. This principle ties with the next security design principle, KISS. The decision to have as few roles as possible helped to simplify access control. Similarly, the architecture and functionality was designed with simplicity in mind as a quality attribute, further supporting the security design principle. Some examples of this include pursuing a service-based architecture and not microservices and dropping the customisable ordering feature. For functionality, the idea was to avoid delivering features that, if not implemented well, could create security and design flaws. A feature that comes to mind is the customisable ordering. If not implemented well, it could be exploited by users. One other aspect to RBAC was the principle of least privilege. Customer accounts were only given privileges to do basic customer operations, such as browse the menu, purchase items. While employee accounts have the ability to create new menu items, edit customer order status etc. Authentication was planned for employee logins. This would have been implemented with npm package express-basic-auth. It would simply add data transfer from server to client to ensure credentials are correct
+
+\medskip \noindent Brewbucks follows additional practices for secure software. Confidentiality design is followed, whereby masking is used for disclosure protection when a user enters their password. Dependency management is also followed. Lock files give the advantage of protecting against dependency injection. It was also intended for the system to log relevant operational information, such as events handled, packets processed and requests satisfied. This is useful for long term security purposes to diagnose breaches or attacks promptly.
+
 \section{Evaluation}
 Summarise testing results and justify how well the software achieves its quality attributes.
 \section{Reflection}
